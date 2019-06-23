@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index:5">
   <a routerLink="/feed" routerLinkActive="active"> <button class="button button--winona button--border-thin button--text-thick button--inverted" data-text="Travellerspedia"><span>Travellerspedia</span></button>
 </a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -9,11 +9,12 @@
       <a routerLink="/login" routerLinkActive="active">  <button class="button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Login</button></a>
       <a routerLink="/registration" routerLinkActive="active">  <button  class="button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Create an account</button></a>
 </div>
-<form class="form-inline my-2 my-lg-0" style="width:81%" *ngIf="element">
-    <input class="form-control mr-lg-2 button--text-thick"  style="width:60%" type="search" placeholder="#Search" aria-label="Search">
+  <form class="form-inline my-2 my-lg-0" style="width:81%" *ngIf="element">
+    <input class="form-control mr-lg-2 button--text-thick"  style="width:60%" type="search" placeholder="# Search" aria-label="Search">
     <button class="button button--winona button--border-thin button--text-thick button--inverted" data-text="Search" ><span>Search</span></button>
   </form>
-<div *ngIf="element" class="notification notify show-count bg-3" style="cursor:pointer" data-count="1" ></div>
+<div *ngIf="element" class="notification notify show-count bg-3 " style="cursor:pointer" data-count="1" >
+</div>
   <div class="bg-3" *ngIf="element" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);    padding: 0.4em;"> 
       <li class="nav-item dropdown">
        <a class="nav-link dropdown-toggle settings" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,3 +30,5 @@
 </div>
   </div>
 </nav>
+
+
