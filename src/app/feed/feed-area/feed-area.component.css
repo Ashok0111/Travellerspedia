@@ -1,0 +1,118 @@
+body {
+    background-color: #DDD;
+  }
+  
+  h1 {
+    color: #444;
+    text-align: center;
+    text-shadow: 1px 1px #FFF;
+  }
+  
+  #new_status {
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 1px 0 10px #AAA;
+    font-family: 'Helvetica Neaue', 'Helvetica', sans-serif;
+    padding-top: 1rem;
+    padding: 0;
+    max-width: 70%;
+  }
+  
+  #post_header {
+    border-bottom: solid #E8E8E8 1px;
+    margin: 0 2%;
+    padding: 0.65rem 0;
+    width: 95.75%;
+  }
+  #post_header li {
+    display: inline-block;
+  }
+  #post_header a {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    text-decoration: none;
+  }
+  #post_header li+li {
+    border-left: solid #E8E8E8 1px;
+  }
+  #post_header li:first-child a {
+    padding: 0 1rem 0 0;
+  }
+  #post_header li:nth-child(2) a {
+    padding: 0 1rem;
+  }
+  #post_header li:last-child a {
+    padding: 0 0 0 1rem;
+  }
+  #post_header .glyphicon {
+    margin-right: 0.5rem;
+  }
+  .global_btn
+  {
+    border: none;
+    margin-top: 0px;
+    width: 150px;
+    height: 40px;
+    text-transform: uppercase;
+    color: #7885cb;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 13px;
+    border-left: 5px solid #7885cb;
+    background-color: #343a40;
+  }
+  #post_content {
+    margin: 0 2%;
+    padding: 0;
+  }
+  #post_content img {
+    margin: 1.25rem 0;
+    padding: 0;
+  }
+  #post_content .textarea_wrap {
+    cursor: text;
+  }
+  #post_content textarea {
+    border: 0;
+    margin: 0rem 0 0.5rem 0;
+    outline: 0;
+    padding: 2.5rem 0 0 1.25rem;
+    resize: none;
+    width: 100%;
+  }
+  
+  #post_footer {
+    border-top: solid #E8E8E8 1px;
+    line-height: 3rem;
+    padding: 0 2% 0 3%;
+  }
+  #post_footer .navbar-nav {
+    padding: 0;
+  }
+  #post_footer .navbar-nav li {
+    display: inline-block;
+  }
+  #post_footer .navbar-nav a {
+    display: block;
+    padding: 2rem 1.25rem 2.2rem 1.25rem;
+  }
+  #post_footer .navbar-nav .glyphicon {
+    line-height: 0;
+  }
+  #post_footer :not(.btn) .glyphicon {
+    color: #999;
+  }
+  #post_footer div {
+    padding: 2%;
+    text-align: right;
+  }
+
+  #post_footer .caret {
+    color: #666;
+    margin-left: 0.5rem;
+  }
+  #post_footer .btn-primary {
+    padding: 0 2rem;
+  }

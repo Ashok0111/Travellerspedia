@@ -1,0 +1,15 @@
+<div style="background-color: #f8f7f4;">
+<nav class="menu" tabindex="0">
+    <div class="smartphone-menu-trigger"></div>
+    <header class="avatar" style="margin-top: 20%;">
+    </header>
+    <ul>
+        <a routerLink="/feed" routerLinkActive="active" class="settings_profile">  <li tabindex="0"><span>  <img src="/assets/img/id-card.png" width="25" height="25" style="margin-right:5%"/>Home</span></li></a>
+        <a routerLink="/profile/profile_changepassword" routerLinkActive="active" class="settings_profile">    <li tabindex="0"  class="settings_profile"><span>  <img src="/assets/img/password.png" width="25" height="25" style="margin-right:5%"/>Places</span></li></a>
+      </ul>
+  </nav>
+<main style="margin-left:15%">
+<app-feed-area></app-feed-area>
+<router-outlet></router-outlet>
+</main>
+</div>

@@ -15,14 +15,6 @@ export class ReginComponent implements OnInit {
   subscription_register: Subscription;
   constructor(private regininteration: ReginInteration) { 
 
-    this.subscription = this.regininteration.getMessage().subscribe(login => { 
-      this.login = login; 
-
-    });
-    this.subscription_register = this.regininteration.get_register().subscribe(register => { 
-      this.register = register; 
-
-    });
   }
 
   ngOnInit() {

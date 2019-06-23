@@ -3,21 +3,13 @@ import { Observable, Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ReginInteration {
-    private subject = new Subject<any>();
-    private subject_register = new Subject<any>();
-    show_login(login: boolean) {
-        this.subject.next({ boolean: login });
-        
-    }
-    show_registration(registation: boolean) {
-        this.subject_register.next({ boolean: registation });
-        
-    }
+    private subject_feed_view = new Subject<any>();
 
-    getMessage(): Observable<any> {
-        return this.subject.asObservable();
+    feed_view(feed_view: boolean) {
+        this.subject_feed_view.next({ boolean: feed_view });
+        
     }
-    get_register(): Observable<any> {
-        return this.subject_register.asObservable();
+    getFeedView(): Observable<any> {
+        return this.subject_feed_view.asObservable();
     }
 }
