@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Prata');
+
+body{
+    font-family: 'Prata', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+nav {
+    position: fixed;
+    display: inline;
+    background: #fff;
+    padding: 0;
+    width: 100%;
+    z-index: 99;
+}
+nav ul{
+    margin: 0;
+    padding: 1rem;
+}
+nav ul li{
+    display: inline;
+    padding: 10px 25px;
+    margin: 0;
+}
+nav ul li a{
+    text-decoration:none;
+    color: #222;
+}
+         /* Here inserts the hover effect for the link */
+nav ul li a:hover{
+    cursor: pointer;
+}
+#header-img{
+    position: absolute;
+    top: 0.6rem;
+    height: 30px;
+    width: 30px;
+}
+/* The showcase part, including the content text */
+.showcase {
+    height: 100vh;
+    width: 100%;
+    color: #fff;    
+}
+.container{
+    max-width:960px;
+    padding-left:1rem;
+    padding-right:1rem;
+    margin:auto;
+    text-align:center;
+  }
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.showcase .brand {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: 3;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/711009/pexels-photo-711009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: top;/*This is how you change where in the pic to put there*/
+    background-size: cover;
+}
+.showcase h1{
+    font-size: 7rem;
+    position: relative;
+    top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding: 35px 0px;
+    text-align: center;
+}
+.showcase h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    top: 3vh;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+/* The categories part */
+/* New strategy: I will put the picture as the background image of the text. */
+/* It's much better!! to display the sub categories in grid and align the text(h1 heading) using flexbox!!!!*/
+
+#categories {
+    height: 90vh;
+    position: relative;
+    top: 8vh;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+.categories-container{
+    width: 90%;
+    margin: auto;
+}
+#categories .sub{
+    width: 100%;
+    margin: auto;
+}
+#categories .sub h1 {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    margin: 30px 15px;
+}
+/* Add hover effect on the h1 of the sub */
+#categories .sub h1:hover, #categories .sub h1:focus{
+    cursor:pointer;
+    text-decoration: underline;
+}
+.tech{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/834949/pexels-photo-834949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);/*linear gradient successfullly adds a half transparent filter to the picure.*/
+    background-position: center;
+    background-size: cover;
+}
+.culture{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/682025/pexels-photo-682025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+}
+.politics{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/2281/man-person-suit-united-states-of-america.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+}
+.business{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/886465/pexels-photo-886465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+}
+.health{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+}
+.more{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/377058/pexels-photo-377058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+}
+/* The video and the free-trial part. They are going to be in a side by side half split grid */
+.wrapper-2-col{
+    width: 90%;
+    margin: auto;
+
+}
+.grid-2-col{
+    display: grid;
+ 
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    
+}
+#video{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 4rem;
+
+}
+
+#free-trial {
+    position: relative;
+    top: 10vh;
+    text-align: center;
+    padding: 4rem;
+}
+#free-trial h1 {
+    font-size: 2rem;
+}
+#free-trial h3 {
+    font-family: "Open Sans", 'Times New Roman', Times, serif;
+}
+.center {
+    text-align: center;
+    margin: auto;
+}
+#free-trial form{
+    height: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(200px, 1fr));
+    grid-column-gap: 1rem;
+    justify-items: center;
+    
+}
+form .email {
+    padding: 6px 0;
+}
+form input{
+    width: 80%;
+    height: 60%;
+    line-height: 3;
+    padding: 0;
+    border: 1px solid #222;
+    font-size: 1rem;
+    margin:1rem;
+    text-align: center;
+
+}
+form .btn {
+    color: #fff;
+    background-color: #222;
+    margin-left: 1rem;
+    border: #222 4px solid;
+}
+#free-trial form button:hover, #free-trial form button:focus{
+    cursor: pointer;
+}
+
+/* The footer part */
+footer {
+    position: relative;
+    top: 20vh;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding:5px;
+}
+.links ul li{
+    display: inline;
+    padding: 0 2rem;
+
+}
+.links ul li a{
+    text-decoration: none;
+    color:#fff;
+    
+}
+.links ul li a:visited{
+    color: #fff;
+}
+.footer-bottom p {
+    padding: 0;
+    margin: 10px 0;
+}
+
+/* Media queries part */
+@media (max-width:880px) {
+    nav ul li {
+        font-size: 0.7rem;
+        padding-left: 2rem;
+        padding-right: 1rem;
+    }
+    /* The showcase part */
+    .showcase {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        position: relative;
+       
+    }
+    .showcase h1 {
+        font-size: 2rem;
+        padding-bottom: 0.8rem;;
+    }
+    .showcase h2 {
+        font-size: 0.8rem;
+        padding-top: 2rem;
+    }
+    /* The categories part */
+    #categories {
+        position: relative;
+        height: 100%;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        overflow-x: hidden;
+        
+    }
+    /* The video and the form part */
+    .grid-2-col{
+        display: block;
+    }
+   
+    #video {
+        margin-top: 5%;
+        margin-bottom: 0px;
+    }
+    #free-trial{
+        padding-top: 0;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+    #free-trial h1 {
+        font-size: 1.5rem;
+    }
+    #free-trial h3 {
+        font-size: .8rem;
+    }
+    footer ul li a{
+       display: none;
+
+    }
+
+  
+}

@@ -1,17 +1,91 @@
 
 <div style="background-color: #f8f7f4;height:100%;    padding-top: 5%;">
-
-      <div *ngFor="let item of items;" class="card-product" style="margin-left:5%;margin-top:2%;width: 70%;">
-          <img style="padding: 1%;" src="/assets/img/user.png">
-          
+<div  *ngFor="let item of items;" class="outer_card" style="margin-left:5%;margin-top:2%;width: 70%;">
+      <div class="card-product" >
+          <img style="padding: 4%;" src="/assets/img/map.png">
           <div class="card-product-infos">
             <h2>Macbook Pro</h2>
             <p>Product description with <strong>relevant info</strong> only.</p>
           </div>
+
+      </div>
+      <div class="row" style="margin-left:5%">
+        <p style="padding-top: 10px;">
+          <a  title="Love it" class="btn btn_emoji btn-counter" data-count="0"><span>💓</span></a>
+          <a  title="Love it" class="btn btn_emoji btn-counter" data-count="0"><span>💔</span></a>
+        </p>
+      </div> 
+      
+      <div class="detailBox">
+        <div class="actionBox">
+            <ul class="commentList">
+                <li>
+                    <div class="commenterImage">
+                      <img src="http://placekitten.com/50/50" />
+                    </div>
+                    <div class="commentText">
+                        <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+    
+                    </div>
+                </li>
+                <li>
+                    <div class="commenterImage">
+                      <img src="http://placekitten.com/45/45" />
+                    </div>
+                    <div class="commentText">
+                        <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
+    
+                    </div>
+                </li>
+                <li>
+                    <div class="commenterImage">
+                      <img src="http://placekitten.com/40/40" />
+                    </div>
+                    <div class="commentText">
+                        <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+    
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Your comments" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary global_btn">Add</button>
+                </div>
+            </form>
         </div>
-
-
+    </div>
+    </div>
 </div>
   
   
+<section class="avenue-messenger">
+  <div class="menu">
+   <div class="items"><span>
+     <a href="#" title="Minimize">&mdash;</a><br>
+     <a href="#" title="End Chat">&#10005;</a>
+     
+     </span></div>
+    <div class="button">...</div>
+  </div>
+  <div class="agent-face">
+    <div class="half">
+     <img class="agent circle" src="http://askavenue.com/img/17.jpg" alt="Jesse Tino"></div>
+  </div>
+<div class="chat">
+  <div class="chat-title">
+    <h1>Jesse Tino</h1>
+    <h2>RE/MAX</h2>
+  </div>
+  <div class="messages">
+    <div class="messages-content"></div>
+  </div>
+  <div class="message-box">
+    <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+    <button type="submit" class="message-submit">Send</button>
+  </div>
+</div>
+</section>
   

@@ -98,6 +98,9 @@ body {
     display: block;
     padding: 2rem 1.25rem 2.2rem 1.25rem;
   }
+  agm-map {
+    height: 300px;
+  }
   #post_footer .navbar-nav .glyphicon {
     line-height: 0;
   }
