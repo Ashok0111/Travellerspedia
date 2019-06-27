@@ -7,7 +7,10 @@ import { ReginInteration } from '../interaction_service/regin_interation';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private regininteration: ReginInteration) { }
+  constructor(private regininteration: ReginInteration) { 
+    this.regininteration.navbar_landingpage(true);
+    this.regininteration.feed_view(false);
+  }
 
   ngOnInit() {
     

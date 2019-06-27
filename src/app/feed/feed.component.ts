@@ -8,7 +8,8 @@ import { ReginInteration } from '../interaction_service/regin_interation';
 export class FeedComponent implements OnInit {
 
   constructor(private regininteration: ReginInteration) { 
-    this.regininteration.feed_view(false);
+    this.regininteration.feed_view(true);
+    this.regininteration.navbar_landingpage(true);
   }
 
   ngOnInit() {

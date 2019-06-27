@@ -8,7 +8,8 @@ import { UserProfileComponent } from './profile/user-profile/user-profile.compon
 import { ProfileLandingpageComponent } from './profile/profile-landingpage/profile-landingpage.component';
 import { ProfileChangepasswordComponent } from './profile/profile-changepassword/profile-changepassword.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-
+import { MessageServiceComponent } from './feed/message-service/message-service.component';
+MessageServiceComponent
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegisterComponent },

@@ -127,7 +127,7 @@ nav ul li a:hover{
     text-decoration: underline;
 }
 .tech{
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),  url(https://images.pexels.com/photos/834949/pexels-photo-834949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);/*linear gradient successfullly adds a half transparent filter to the picure.*/
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));/*linear gradient successfullly adds a half transparent filter to the picure.*/
     background-position: center;
     background-size: cover;
 }

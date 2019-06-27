@@ -18,6 +18,7 @@ import { AgmCoreModule } from '@agm/core';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MessageServiceComponent } from './feed/message-service/message-service.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ProfileChangepasswordComponent,
     FeedAreaComponent,
     PostBinComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    MessageServiceComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ReactiveFormsModule,
     AngularFontAwesomeModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAko0mEGffNFfW8dZY58lUV1nfPMqXLM9Y',
+      apiKey: 'XXX  ',
       libraries: ["places"]
     })
   ],
