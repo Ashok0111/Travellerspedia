@@ -2,14 +2,16 @@
   <div class="parent clearfix">
       <div class="login">
           <div class="container">
-            <h1>Don't have an account <br/>yet?</h1>
-           <h6>Create your account now.</h6>
+            <h2 style="letter-spacing: 3px;">Don't have an account yet?</h2>
+           <h6 style="letter-spacing: 5px;" >Create your account now.</h6>
             <div class="login-form">
-              <form action="">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="E-mail Address">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm Password">
+              <form  name="user_reg_form" #event="ngForm" (ngSubmit)="onSubmit(event)">
+                <input name="fname" #name="ngModel" [(ngModel)]="register_user.registration_model.fname"  [ngModelOptions]="{standalone: false}" type="text" placeholder="First Name"/>
+                <input name="lname" #name="ngModel" [(ngModel)]="register_user.registration_model.lname"  [ngModelOptions]="{standalone: false}" type="text" placeholder="Last Name"/>
+                <input name="email" #name="ngModel" [(ngModel)]="register_user.registration_model.email"  [ngModelOptions]="{standalone: false}" type="email" placeholder="E-mail Address"/>
+                <input name="username" #name="ngModel" [(ngModel)]="register_user.registration_model.username"  [ngModelOptions]="{standalone: false}" type="text" placeholder="Username"/>
+                <input name="password" #name="ngModel" [(ngModel)]="register_user.registration_model.password"  [ngModelOptions]="{standalone: false}" type="password" placeholder="Password"/>
+                <input type="password" placeholder="Confirm Password"/>
     
                 <div class="remember-form">
                 </div>

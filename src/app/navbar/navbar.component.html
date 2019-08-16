@@ -1,7 +1,10 @@
 
-<nav  *ngIf="transparent['boolean'];else elseBlock" class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index:5;    box-shadow: 1px 0 6px #7885cb;">
+<nav  *ngIf="transparent['boolean'];else elseBlock" class="navbar navbar-expand-md navbar-dark bg-dark" style="z-index:5;    box-shadow: 1px 0 6px #7885cb;">
   <a routerLink="/feed" routerLinkActive="active"> <button class="button button--winona button--border-thin button--text-thick button--inverted" data-text="Travellerspedia"><span>Travellerspedia</span></button>
 </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
@@ -10,8 +13,8 @@
       <a routerLink="/login" routerLinkActive="active">  <button class="button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Login</button></a>
       <a routerLink="/registration" routerLinkActive="active">  <button  class="button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Create an account</button></a>
 </div>
-  <form class="form-inline my-2 my-lg-0" style="width:79%" *ngIf="element['boolean']">
-    <input class="form-control mr-lg-2 button--text-thick"  style="width:60%" type="search" placeholder="# Search" aria-label="Search">
+  <form class="form-inline my-2 my-md-0" style="width:79%" *ngIf="element['boolean']">
+    <input class="form-control mr-md-2 button--text-thick"  style="width:60%" type="search" placeholder="# Search" aria-label="Search">
   </form>
 <div *ngIf="element['boolean']" class="notification notify show-count bg-3 " style="cursor:pointer" data-count="1" >
 </div>
@@ -34,9 +37,12 @@
   
 </nav>
 <ng-template #elseBlock>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index:5;box-shadow: 1px 0 6px #7885cb40;background-color: #343a4040!important;">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="z-index:5;box-shadow: 1px 0 6px #7885cb40;background-color: #343a4040!important;">
   <a routerLink="/feed" routerLinkActive="active"> <button class="button button--winona button--border-thin button--text-thick button--inverted" data-text="Travellerspedia"><span>Travellerspedia</span></button>
 </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
@@ -45,8 +51,8 @@
       <a routerLink="/login" routerLinkActive="active">  <button class="button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Login</button></a>
       <a routerLink="/registration" routerLinkActive="active">  <button  class="button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Create an account</button></a>
 </div>
-  <form class="form-inline my-2 my-lg-0" style="width:79%" *ngIf="element['boolean']">
-    <input class="form-control mr-lg-2 button--text-thick"  style="width:60%" type="search" placeholder="# Search" aria-label="Search">
+  <form class="form-inline my-2 my-md-0" style="width:79%" *ngIf="element['boolean']">
+    <input class="form-control mr-md-2 button--text-thick"  style="width:60%" type="search" placeholder="# Search" aria-label="Search">
   </form>
 <div *ngIf="element['boolean']" class="notification notify show-count bg-3 " style="cursor:pointer" data-count="1" >
 </div>

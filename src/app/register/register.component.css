@@ -5,7 +5,7 @@
     box-sizing: border-box;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
-    transition: 0.3s;
+    transition: 0.3s;    
   }
   
   body {  
@@ -130,7 +130,7 @@
     font-weight: normal;
     background: rgba(57, 57, 57, 0.07);
     margin: 8.5px 0;
-    height: 55px;
+    height: 40px;
     border: none;
     padding: 0px 30px;
     border-radius: 10px;
@@ -139,15 +139,15 @@
     border: none;
     margin-top: 0px;
     margin-bottom: 20px;
-    width: 241px;
-    height: 49px;
+    width: 170px;
+    height: 40px;
     text-transform: uppercase;
     color: #7885cb;
     border-radius: 10px;
     position: relative;
     z-index: 2;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 10px;
     border-left: 5px solid #7885cb;
     background-color: #343a40;
   }
