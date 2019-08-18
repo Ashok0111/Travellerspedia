@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 1%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -54,7 +53,20 @@
     display: table;
     clear: both;
   }
-  
+  .forget_passcode
+  {
+    height:400px;
+    z-index:-5;
+    clip-path: polygon(0 1%, 65% 0, 23% 100%, 0% 100%);
+    background: url("/assets/img/forget_password.jpg") no-repeat center center scroll;
+  }
+  .forget_area
+  {
+    float:right;
+    width:50%;
+    height:400px;
+    z-index:5;
+  }
   .bg-illustration {
     position: relative;
     height: 80vh;
@@ -151,6 +163,25 @@
     border-left: 5px solid #7885cb;
     background-color: #343a40;
   }
+
+  .reset_pwd .container .login-form form button[type=submit] {
+    border: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 30%;
+    height: 49px;
+    text-transform: uppercase;
+    color: #7885cb;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 13px;
+    border-left: 5px solid #7885cb;
+    background-color: #343a40;
+  }
+
+
   .login .container .login-form form button[type=submit]:hover::after {
     color: white;
   }
@@ -311,7 +342,7 @@
       margin-top: 40px;
     }
     .login .container .login-form {
-      margin-top: 90px;
+      margin-top: 6px;
     }
     .login .container .login-form form input {
       height: 45px;
@@ -364,3 +395,133 @@
       opacity: 1;
     }
   }
+
+.circCont {
+  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
+  left: 90%;
+  position: absolute;
+  z-index: 6;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 4px solid #E91E63;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+.circle:after {
+  width: 24px;
+  height: 4px;
+  background-color: #E91E63;
+  content: "";
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -2px;
+  position: absolute;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /*@include transform-origin(100%,100%);*/
+}
+.circle:before {
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -2px;
+  width: 24px;
+  height: 4px;
+  background-color: #E91E63;
+  content: "";
+  position: absolute;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  /*@include transform-origin(0%,0%);*/
+}
+  .circle[data-animation="xMarks"] {
+    border: 0px solid white;
+    overflow: hidden;
+    -moz-box-shadow: 0px 0px 0px 0px #E91E63 inset;
+    -webkit-box-shadow: 0px 0px 0px 0px #E91E63 inset;
+    box-shadow: 0px 0px 0px 0px #E91E63 inset;
+    -moz-transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+    -o-transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+    -webkit-transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+    transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+  }
+  .circle[data-animation="xMarks"]:before, .circle[data-animation="xMarks"]:after {
+    -moz-transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+    -o-transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+    -webkit-transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+    transition: cubic-bezier(0.175, 0.885, 0.52, 1.775) 200ms;
+  }
+  .circle[data-animation="xMarks"]:not(.xMarks):hover {
+    -moz-box-shadow: 0px 0px 0px 6px #E91E63 inset;
+    -webkit-box-shadow: 0px 0px 0px 6px #E91E63 inset;
+    box-shadow: 0px 0px 0px 6px #E91E63 inset;
+  }
+  .circle[data-animation="xMarks"]:not(.xMarks):hover:before {
+    -moz-transform: scale(0.7) rotate(45deg);
+    -ms-transform: scale(0.7) rotate(45deg);
+    -webkit-transform: scale(0.7) rotate(45deg);
+    transform: scale(0.7) rotate(45deg);
+    -moz-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    -webkit-transition-delay: 100ms;
+    transition-delay: 100ms;
+  }
+  .circle[data-animation="xMarks"]:not(.xMarks):hover:after {
+    -moz-transform: scale(0.7) rotate(-45deg);
+    -ms-transform: scale(0.7) rotate(-45deg);
+    -webkit-transform: scale(0.7) rotate(-45deg);
+    transform: scale(0.7) rotate(-45deg);
+    -moz-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    -webkit-transition-delay: 100ms;
+    transition-delay: 100ms;
+  }
+  
+  .circle.xMarks {
+    -moz-transition: -moz-transform 400ms ease-out, opacity 200ms ease-in;
+    -o-transition: -o-transform 400ms ease-out, opacity 200ms ease-in;
+    -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-in;
+    transition: transform 400ms ease-out, opacity 200ms ease-in;
+    -moz-transition-delay: opacity 100ms;
+    -o-transition-delay: opacity 100ms;
+    -webkit-transition-delay: opacity 100ms;
+    transition-delay: opacity 100ms;
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+    -moz-box-shadow: 0px 0px 0px 20px #E91E63 inset;
+    -webkit-box-shadow: 0px 0px 0px 20px #E91E63 inset;
+    box-shadow: 0px 0px 0px 20px #E91E63 inset;
+  }
+  .circle.xMarks:before {
+    background-color: white;
+    -moz-transform: scale(2) rotate(45deg);
+    -ms-transform: scale(2) rotate(45deg);
+    -webkit-transform: scale(2) rotate(45deg);
+    transform: scale(2) rotate(45deg);
+  }
+  .circle.xMarks:after {
+    background-color: white;
+    -moz-transform: scale(2) rotate(-45deg);
+    -ms-transform: scale(2) rotate(-45deg);
+    -webkit-transform: scale(2) rotate(-45deg);
+    transform: scale(2) rotate(-45deg);
+  }
+  
