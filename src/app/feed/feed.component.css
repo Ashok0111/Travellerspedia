@@ -4,8 +4,16 @@ body {
     font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #7986cb;
     padding-left: 240px;
+   
   }
-
+  .small_font
+  {
+    font-size:12px;
+  }
+.menu_list
+{
+padding-top:2%
+}
 #style-1::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);

@@ -1,70 +1,16 @@
 <div style="background-color: #f8f7f4;">
-<nav class="menu" tabindex="0">
+<nav class="menu menu_list" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
-    <ul style="    margin-top: 50%;">
-        <a routerLink="/feed" routerLinkActive="active" class="settings_profile">  <li tabindex="0"><span>  <img src="/assets/img/id-card.png" width="25" height="25" style="margin-right:5%"/>Home</span></li></a>
-        <a routerLink="/profile/profile_changepassword" routerLinkActive="active" class="settings_profile">    <li tabindex="0"  class="settings_profile"><span>  <img src="/assets/img/password.png" width="25" height="25" style="margin-right:5%"/>Places</span></li></a>
-        <a routerLink="/feed/message-service" routerLinkActive="active" class="settings_profile">    <li tabindex="0"  class="settings_profile"><span>  <img src="/assets/img/password.png" width="25" height="25" style="margin-right:5%"/>Message</span></li></a>
+    <ul style="    margin-top:10%;">
+        <a routerLink="/feed" routerLinkActive="active" class="settings_profile">  <li tabindex="0"><span>  <img src="/assets/img/id-card.png" width="20" height="20" style="margin-right:12%"/> <span class="small_font" >Home </span></span></li></a>
+        <a routerLink="/profile/profile_changepassword" routerLinkActive="active" class="settings_profile">    <li tabindex="0"  class="settings_profile"><span>  <img src="/assets/img/password.png" width="20" height="20" style="margin-right:12%"/> <span class="small_font"> Places </span></span></li></a>
+        <a routerLink="/feed/message-service" routerLinkActive="active" class="settings_profile">    <li tabindex="0"  class="settings_profile"><span>  <img src="/assets/img/password.png" width="20" height="20" style="margin-right:12%"/> <span class="small_font">  Message </span></span></li></a>
         
       </ul>
   </nav>
-  <div style="float: right;overflow: auto;height: 650px;    border-left: 1px solid #b5b5b5;    margin-right: 1%;" id="style-1">
-    <small style="padding-left:5%"><b>Places to visit around you</b></small>
-      <div  class="card-product" style="margin-left:5%;margin-top:2%;width: 90%;">
-          <img style="padding: 1%;" src="">
-          
-          <div class="card-product-infos">
-            <h2>#kodaikanal</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
-        <div  class="card-product" style="margin-left:5%;margin-top:2%;width: 90%;">
-            <img style="padding: 1%;" src="">
-            
-            <div class="card-product-infos">
-              <h2>#kodaikanal</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
-            </div>
-          </div>
-          <div  class="card-product" style="margin-left:5%;margin-top:2%;width: 90%;">
-              <img style="padding: 1%;" src="">
-              
-              <div class="card-product-infos">
-                <h2>#kodaikanal</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
- <div class="h-divider">
-    <div class="shadow"></div>
-    </div>
 
-    <small style="padding-left:5%"><b>Stay Around You</b></small>
-      <div  class="card-product" style="margin-left:5%;margin-top:2%;width: 90%;">
-          <img style="padding: 1%;" src="">
-          
-          <div class="card-product-infos">
-            <h2>#kodaikanal</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
-        <div  class="card-product" style="margin-left:5%;margin-top:2%;width: 90%;">
-            <img style="padding: 1%;" src="">
-            
-            <div class="card-product-infos">
-              <h2>#kodaikanal</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
-            </div>
-          </div>
-          <div  class="card-product" style="margin-left:5%;margin-top:2%;width: 90%;">
-              <img style="padding: 1%;" src="">
-              
-              <div class="card-product-infos">
-                <h2>#kodaikanal</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
-  </div>
-<main style="margin-left:15%;max-height: 650px;overflow: auto;    margin-right: 22%;" id="style-1">
+<main class="container" style="height:550px;overflow: auto;float:right" id="style-1">
+
 <app-feed-area></app-feed-area>
   
 <router-outlet></router-outlet>
