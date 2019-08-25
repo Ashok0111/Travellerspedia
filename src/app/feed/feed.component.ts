@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReginInteration } from '../interaction_service/regin_interation';
+declare var $: any;
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
@@ -13,7 +14,16 @@ export class FeedComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-  }
 
+}
+  
+  show_sidebar()
+  {
+    $(".page-wrapper").addClass("toggled");
+  }
+    
+  close_sidebar()
+  {
+    $(".page-wrapper").removeClass("toggled");
+  }
 }

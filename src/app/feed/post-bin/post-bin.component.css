@@ -75,11 +75,13 @@ display:inline-block;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
   .card-product img {
-    height: 100%;
-    width: 120px;
+    padding: 1%;
     object-fit: cover;
   }
-  
+  .commentText p
+  {
+    font-size: 12px;
+  }
   .card-product h2 {
     font-size: 16px;
     font-weight: bold;
@@ -120,7 +122,6 @@ body {
   background: #fff;
   font-family: 'Avenir', 'Open Sans', sans-serif;
   font-size: 14px;
-  line-height: 1.3;
   overflow: hidden;
 }
 
@@ -935,14 +936,14 @@ p { padding-left: 10px; }
     border: none;
     margin-top: 0px;
     width: 150px;
-    height: 40px;
+    height: 32px;
     text-transform: uppercase;
     color: #7885cb;
     border-radius: 10px;
     position: relative;
     z-index: 2;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 10px;
     border-left: 5px solid #7885cb;
     background-color: #343a40;
   }

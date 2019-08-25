@@ -1,5 +1,5 @@
 
-<nav  *ngIf="transparent['boolean'];else elseBlock" class="nav_size navbar navbar-expand-md navbar-dark bg-dark" style="z-index:5;
+<nav  *ngIf="transparent['boolean'];else elseBlock" class="nav_size navbar navbar-expand-md navbar-dark bg-dark" style="z-index:5;    position: sticky;
     height: 20%; box-shadow: 1px 0 6px #7885cb;">
   <a routerLink="/feed" routerLinkActive="active"> <button class=" btn_small_v1 button button--winona button--border-thin button--text-thick button--inverted" style="    letter-spacing: 3px;" data-text="Travellerspedia"><span>Travellerspedia</span></button>
 </a>
@@ -7,6 +7,11 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-md-0" style="width:79%;margin-left:5%" *ngIf="element['boolean']">
+   <div class="search_icon"><span class="fa fa-search" style="color: #494949;"></span></div> <input class="form-control mr-md-2 search_bar"  style="width:60%;border-radius:0px;height: calc(1em + .75rem + 2px);" type="search" placeholder="Search" aria-label="Search">
+
+  
+  </form>
     <ul class="navbar-nav mr-auto">
 
     </ul>
@@ -14,9 +19,7 @@
       <a routerLink="/login" routerLinkActive="active">  <button class=" btn_small_v2 button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Login</button></a>
       <a routerLink="/registration" routerLinkActive="active">  <button  class=" btn_small_v2 button button--wayra button--border-medium button--text-upper button--size-s button--text-thick button--inverted">Create an account</button></a>
 </div>
-  <form class="form-inline my-2 my-md-0" style="width:79%" *ngIf="element['boolean']">
-   <div class="search_icon"><span class="fa fa-search" style="color: #494949;"></span></div> <input class="form-control mr-md-2 search_bar"  style="width:60%;    height: calc(1em + .75rem + 2px);" type="search" placeholder="Search" aria-label="Search">
-  </form>
+
 <div *ngIf="element['boolean']" class="notification notify show-count bg-3 " style="cursor:pointer" data-count="1" >
 </div>
   <div class="bg-3" *ngIf="element['boolean']" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);    padding: 0.1em;"> 
