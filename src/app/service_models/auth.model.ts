@@ -6,3 +6,10 @@ export class RegisterModel {
     gender:string;
     password:string;
   }
+  export class LoginModel {
+    email: string ;
+    password:string;
+  }
+  export class Auth_Model {
+    token: string ;
+  }

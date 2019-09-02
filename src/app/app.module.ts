@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MessageServiceComponent } from './feed/message-service/message-service.component';
+import { AuthService } from './auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,12 +37,12 @@ import { MessageServiceComponent } from './feed/message-service/message-service.
     PostBinComponent,
     LandingPageComponent,
     MessageServiceComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     AngularFontAwesomeModule,
@@ -50,7 +51,7 @@ import { MessageServiceComponent } from './feed/message-service/message-service.
       libraries: ["places"]
     })
   ],
-  providers: [],
+  providers: [AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

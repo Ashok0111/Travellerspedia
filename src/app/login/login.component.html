@@ -14,9 +14,9 @@
         <h2 style="letter-spacing:3px">Login to access to<br />your account</h2>
     
         <div class="login-form">
-          <form action="">
-            <input type="email" placeholder="E-mail Address">
-            <input type="password" placeholder="Password">
+          <form name="login" #event="ngForm" (ngSubmit)="onSubmit(event)">
+            <input name="email" #name="ngModel" [(ngModel)]="register_user.login_model.email"  [ngModelOptions]="{standalone: false}" type="email" placeholder="E-mail Address">
+            <input name="password" #name="ngModel" [(ngModel)]="register_user.login_model.password"  [ngModelOptions]="{standalone: false}" type="password" placeholder="Password">
             
             <div class="remember-form">
               <input type="checkbox" style="    margin-top: 4%;">
@@ -68,7 +68,7 @@
 <ng-template #elseBlock>
         <div class="login-form" style="    margin-top: 20%;">
                        <h4 style="letter-spacing:3px">Change Password</h4>
-             <form action="">
+             <form  >
             <input type="text" placeholder="Verification code" style="width:66%;height: 40px;">
              <input type="text" placeholder="New Password" style="width:66%;height: 40px;">
               <input type="text" placeholder="Confirm Password" style="width:66%;height: 40px;">
