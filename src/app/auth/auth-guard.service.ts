@@ -14,17 +14,16 @@ export class AuthGuard implements CanActivate{
     return new Promise((resolve) => {
       this.authservice.send_token().then((res) => {
         console.log(res,"promise");
-          if(res['status']!= "Success")
+          if(res['status']!= "Valid")
           {
             resolve(false);
             this.router.navigateByUrl('/login');
           }
-          else if(res['status']== "Success"){
+          else if(res['status']== "Valid"){
             resolve(true);
           }
         })
         .catch(err => {
-          console.log("error");
           resolve(false);
         });
       })

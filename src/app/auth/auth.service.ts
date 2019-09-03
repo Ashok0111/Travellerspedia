@@ -13,7 +13,7 @@ export class AuthService {
   public send_token()
   {
     let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
-    headers = headers.append('Authorization', localStorage.getItem('a-t'));
+    headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
     const httpOptions= {
       headers: headers
     };
