@@ -13,3 +13,4 @@ export class RegisterModel {
   export class Auth_Model {
     token: string ;
   }
+  

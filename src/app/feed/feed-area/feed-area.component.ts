@@ -2,10 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
+import { Post_area } from 'src/app/service_models/api_service.model';
+
+import { NgForm } from '@angular/forms';
+import { posting_service } from 'src/app/services/services_post';
 @Component({
   selector: 'app-feed-area',
   templateUrl: './feed-area.component.html',
-  styleUrls: ['./feed-area.component.css']
+  styleUrls: ['./feed-area.component.css'],
+  providers:[Post_area]
 })
 export class FeedAreaComponent implements OnInit {
   public latitude: number;
@@ -18,10 +23,14 @@ export class FeedAreaComponent implements OnInit {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
-  ) {}
+    private ngZone: NgZone,
+    private Post_area_lc:Post_area,
+    private posting_service_:posting_service  ) {
+
+  }
 
   ngOnInit() {
+    this.Post_area_lc.post_area_txt="";
     //set google maps defaults
     this.zoom = 4;
     this.latitude = 39.8282;
@@ -56,7 +65,14 @@ export class FeedAreaComponent implements OnInit {
       });
     });
   }
+  onSubmit(form : NgForm)
+  {
+    this.posting_service_.create_post(form.value).subscribe((res) => {
+      console.log(res);
 
+        });
+
+  }
   private setCurrentPosition() {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {

@@ -1,23 +1,28 @@
 
 <div>
-  
 <div class="col-xs-12 col-sm-5" id="new_status" style="width:60%">
-  <div><i class="fa fa-cog pull-right" style="    color: #575f67;margin: 0.3em;cursor:pointer"aria-hidden="true"></i></div>
+  <div>
+  <i class="fa fa-cog pull-right" style="    color: #575f67;margin: 0.3em;cursor:pointer"aria-hidden="true"></i>
+  </div>
+    <form name="post" #event="ngForm" (ngSubmit)="onSubmit(event)">
     <div class="col-xs-12" id="post_content" style="display:flex;    height: 140px;">
         <img width="30" height="30" src="/assets/img/user.png">
-      <div class="textarea_wrap" style="width: 100%;"><textarea style="width: 100%;    height: 100%;" class="col-xs-11" placeholder="What's on your mind?"></textarea></div>
+      <div class="textarea_wrap" style="width: 100%;">
+      <textarea name="post" #name="ngModel" [(ngModel)]="Post_area_lc.post_area_txt"  [ngModelOptions]="{standalone: false}" style="width: 100%;    height: 100%;" class="col-xs-11" placeholder="What's on your mind?"></textarea>
+      </div>
     </div>
     <div class="col-xs-12" id="post_footer">
- 
       <div class="col-xs-5">
         <div>
       <img data-toggle="modal" data-target="#myModal" width="20" height="20" src="/assets/img/gps.png" style="margin-right:3%;cursor:pointer">
-      <button class="btn btn-primary global_btn" style="font-size: 10px;">Post</button>
-        </div> 
-           
+      <button type="submit" class="btn btn-primary global_btn" style="font-size: 10px;">Post</button>
+        </div>
       </div>
     </div>
-  </div>
+    
+ </form>
+    </div>
+     
 </div>
   <!-- The Modal -->
   <div class="modal" id="myModal">
