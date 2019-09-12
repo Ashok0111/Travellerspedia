@@ -73,6 +73,9 @@ display:inline-block;
   {
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-top:2%;
+    width: 90%;
+    margin-left: 5%;
   }
   .card-product img {
     padding: 1%;

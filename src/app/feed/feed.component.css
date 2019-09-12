@@ -550,33 +550,23 @@ padding-top:2%
     animation: swing ease-in-out 0.5s 1 alternate;
   }
   
-  .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f105";
-    font-style: normal;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    background: 0 0;
-    position: absolute;
-    right: 15px;
-    top: 14px;
-  }
+
   
   .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
     padding: 5px 0;
   }
-  
+.fa.fa-bars
+{
+  color:grey;
+}
   .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
     padding-left: 25px;
     font-size: 13px;
   }
-  
+  .sidebar-dropdown
+  {
+    cursor: pointer;
+  }
   .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li a:before {
     content: "\f111";
     font-family: "Font Awesome 5 Free";
@@ -715,7 +705,7 @@ padding-top:2%
   /*-----------------------------chiller-theme-------------------------------------------------*/
   
   .chiller-theme .sidebar-wrapper {
-      background: #31353D;
+      background: #343a40;;
   }
   
   .chiller-theme .sidebar-wrapper .sidebar-header,
