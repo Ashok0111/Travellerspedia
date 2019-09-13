@@ -1,0 +1,68 @@
+<div class="page-wrapper chiller-theme toggled" style="    position: fixed;z-index: 20;">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" (click)="show_sidebar()" style="margin-top: 10%;z-index:10">
+    <i class="fa fa-bars"></i>
+  </a>
+
+<nav id="sidebar" class="sidebar-wrapper" style="position:absolute;z-index:-5"> 
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">Overview</a>
+        <div id="close-sidebar" (click)="close_sidebar()">
+          <i class="fa fa-times d-lg-none"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">Jhon
+            <strong>Smith</strong>
+          </span>
+          <span class="user-role">Administrator</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a>
+              <i class="fa fa-shopping-cart"></i>
+              <span>Messages</span>
+              <span class="badge badge-pill badge-danger">1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="#">
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a href="#">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  </div>

@@ -20,6 +20,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MessageServiceComponent } from './feed/message-service/message-service.component';
 import { AuthService } from './auth/auth.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AuthService } from './auth/auth.service';
     PostBinComponent,
     LandingPageComponent,
     MessageServiceComponent,
+    SidebarComponent,
 
   ],
   imports: [
