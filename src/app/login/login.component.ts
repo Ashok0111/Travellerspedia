@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       {
         localStorage.setItem('a-t', res["access-token"]);
         localStorage.setItem('r-t', res["refresh-token"]);
-        this.router.navigate(['/feed']);
+        this.router.navigate(['/feed/feedroll']);
       }
         });
 
