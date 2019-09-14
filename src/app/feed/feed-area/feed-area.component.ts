@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import { Post_area } from 'src/app/service_models/api_service.model';
-
 import { NgForm } from '@angular/forms';
 import { posting_service } from 'src/app/services/services_post';
 @Component({
@@ -17,8 +16,24 @@ export class FeedAreaComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
-  
+  @ViewChild('myPond') myPond: any;
   @ViewChild("search")
+  pondOptions = {
+    class: 'my-filepond',
+    multiple: true,
+    allowImagePreview:true,
+    imagePreviewMaxFileSize:5,
+    imagePreviewHeight: 100,
+    imageCropAspectRatio: '1:1',
+    imageResizeTargetWidth: 100,
+    imageResizeTargetHeight: 100,
+    labelIdle: 'Attachments',
+  }
+  
+  pondHandleAddFile(event: any) {
+    console.log('A file was added', event);
+  }
+  
   public searchElementRef: ElementRef;
 
   constructor(

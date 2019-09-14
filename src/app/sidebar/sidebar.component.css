@@ -432,7 +432,9 @@
   .chiller-theme .sidebar-footer>a:hover i {
       color: #b8bfce;
   }
-  
+  .sidebar-dropdown span{
+    font-size:14px;
+  }
   .page-wrapper.chiller-theme.toggled #close-sidebar {
       color: #bdbdbd;
   }

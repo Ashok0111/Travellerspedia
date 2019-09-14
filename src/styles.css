@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.global_btn
+{
+  border: none;
+  margin-top: 0px;
+  width: 90px;
+  height: 30px;
+  text-transform: uppercase;
+  color: #7885cb;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 13px;
+  border-left: 5px solid #7885cb;
+  background-color: #343a40;
+}

@@ -21,7 +21,14 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MessageServiceComponent } from './feed/message-service/message-service.component';
 import { AuthService } from './auth/auth.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
+// import filepond module
+import { FilePondModule, registerPlugin } from 'ngx-filepond';
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+// import and register filepond file type validation plugin
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+registerPlugin(FilePondPluginFileValidateType,
+  FilePondPluginImagePreview
+  );
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +51,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FilePondModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -56,4 +64,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   providers: [AuthService ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

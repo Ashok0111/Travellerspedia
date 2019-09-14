@@ -19,12 +19,18 @@
       <div class="textarea_wrap" style="width: 100%;">
       <textarea type="text"  placeholder="Topic"></textarea>
       <textarea name="post"  style=" padding-top: 0px;" #name="ngModel" [(ngModel)]="Post_area_lc.post_area_txt"  [ngModelOptions]="{standalone: false}" class="col-xs-11" placeholder="What's on your mind?"></textarea>
+
       </div>
     </div>
     <div class="col-xs-12" id="post_footer">
       <div class="col-xs-5">
         <div>
-           <img   width="20" height="20" src="/assets/img/attachment.png" style="margin-right:3%;cursor:pointer">
+        <file-pond #myPond 
+    [options]="pondOptions" 
+    [files]="pondFiles"
+    (oninit)="pondHandleInit()"
+    (onaddfile)="pondHandleAddFile($event)">
+</file-pond>
       <img data-toggle="modal" data-target="#myModal" width="20" height="20" src="/assets/img/gps.png" style="margin-right:3%;cursor:pointer">
       <button type="submit" class="btn btn-primary global_btn" style="font-size: 10px;">Post</button>
         </div>

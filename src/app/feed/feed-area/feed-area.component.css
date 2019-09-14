@@ -47,6 +47,10 @@ body {
   #post_header .glyphicon {
     margin-right: 0.5rem;
   }
+  .filepond--drop-label > label
+  {
+    font-size: 10px;
+  }
   .global_btn
   {
     border: none;

@@ -166,16 +166,7 @@ body {
   color: gray;
   cursor: pointer;
 }
-.chat .chat-message button {
-  float: right;
-  color: #94C2ED;
-  font-size: 16px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  background: #F2F5F8;
-}
+
 .chat .chat-message button:hover {
   color: #75b1e8;
 }
@@ -216,4 +207,20 @@ body {
   content: " ";
   clear: both;
   height: 0;
+}
+.global_btn
+{
+  border: none;
+  margin-top: 0px;
+  width: 90px;
+  height: 30px;
+  text-transform: uppercase;
+  color: #7885cb;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 13px;
+  border-left: 5px solid #7885cb;
+  background-color: #343a40;
 }
