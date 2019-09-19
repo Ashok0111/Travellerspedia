@@ -6,10 +6,16 @@
       <!-- here’s the avatar -->
       <a href="#">
         <img src="/assets/img/user.png" />
+        <file-pond #myPond 
+    [options]="pondOptions" 
+    [files]="pondFiles"
+    (oninit)="pondHandleInit()"
+    (onaddfile)="pondHandleAddFile($event)">
+</file-pond>
       </a>
   
       <!-- the username -->
-      <h1>UserName</h1>
+      <h1>{{disp_name}}</h1>
   
       <!-- and role or location -->
       <h2>Traveller</h2>

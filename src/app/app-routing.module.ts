@@ -20,7 +20,7 @@ const routes: Routes = [
      { path: 'chat', component: MessageServiceComponent },
      { path: 'feedroll', component: FeedAreaComponent },
     ]},
-  { path: 'profile', component: ProfileComponent,
+  { path: 'profile', component: ProfileComponent,canActivate: [AuthGuard],
   children: [
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'profile_landingpage', component: ProfileLandingpageComponent },

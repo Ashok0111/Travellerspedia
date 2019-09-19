@@ -1,6 +1,7 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { ReginInteration } from '../interaction_service/regin_interation';
 import { Subscription } from 'rxjs';
+import * as jwt_decode from "jwt-decode";
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -23,7 +24,6 @@ export class NavbarComponent implements OnInit {
       
     });
    }
-
   ngOnInit() {
 
   }

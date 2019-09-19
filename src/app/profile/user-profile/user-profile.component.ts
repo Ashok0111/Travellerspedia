@@ -9,7 +9,8 @@ import { ReginInteration } from 'src/app/interaction_service/regin_interation';
 export class UserProfileComponent implements OnInit {
 
   constructor(private regininteration: ReginInteration) { 
-    this.regininteration.feed_view(false);
+    this.regininteration.feed_view(true);
+    this.regininteration.navbar_landingpage(true);
   }
 
   ngOnInit() {

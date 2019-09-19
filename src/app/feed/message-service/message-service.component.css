@@ -23,8 +23,8 @@ body {
 .people-list {
   width: 280px;
   float: left;
-  margin-left: 20%;
-  height: 100%;
+  margin-left: 2%;
+  flex: 1;
   background: #343a400a;
 
 }
@@ -46,7 +46,6 @@ body {
 }
 .people-list ul {
   padding: 20px;
-  height: 100%;
   list-style-type: none;
 }
 .people-list ul li {
@@ -71,6 +70,7 @@ body {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   color: #434651;
+  flex: 2;
 }
 .chat .chat-header {
 
