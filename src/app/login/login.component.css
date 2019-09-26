@@ -6,13 +6,13 @@
     -o-transition: 0.3s;
     transition: 0.3s;
   }
-  
+
   body {
     background-color: #fff;
     font-family: Montserrat;
     overflow-x: hidden;
   }
-  
+
   article,
   aside,
   details,
@@ -26,7 +26,7 @@
   summary {
     display: block;
   }
-  
+
   h1,
   h2,
   h3,
@@ -39,15 +39,15 @@
     word-wrap: break-word;
     text-decoration: none;
   }
-  
+
   img {
     border: none;
   }
-  
+
   *:focus {
     outline: none;
   }
-  
+
   .clearfix::after {
     content: "";
     display: table;
@@ -87,7 +87,7 @@
     height: auto;
     margin: 19px 0 0 25px;
   }
-  
+
   @-webkit-keyframes bgslide {
     from {
       left: -100%;
@@ -100,7 +100,7 @@
       opacity: 1;
     }
   }
-  
+
   @keyframes bgslide {
     from {
       left: -100%;
@@ -114,7 +114,7 @@
     }
   }
   .login {
-    
+
     overflow-Y: auto;
     float: left;
     margin: 0 auto;
@@ -142,7 +142,7 @@
     font-weight: normal;
     background: rgba(57, 57, 57, 0.07);
     margin: 8.5px 0;
-    height: 55px;
+    height: 40px;
     border: none;
     padding: 0px 30px;
     border-radius: 10px;
@@ -152,7 +152,7 @@
     margin-top: 0px;
     margin-bottom: 20px;
     width: 165px;
-    height: 40px;
+    height: 35px;
     text-transform: uppercase;
     color: #7885cb;
     border-radius: 10px;
@@ -163,7 +163,9 @@
     border-left: 5px solid #7885cb;
     background-color: #343a40;
   }
-
+  h2{
+    font-size: 1.5rem !important;
+}
   .reset_pwd .container .login-form form button[type=submit] {
     border: none;
     margin-top: 15px;
@@ -199,7 +201,7 @@
     transition: 0.3s ease-in-out;
     right: 0;
     bottom: 0;
-    
+
   }
   .login .container .remember-form {
     position: relative;
@@ -209,22 +211,22 @@
     margin-top: 9px;
   }
   .login .container .remember-form span {
-    font-size: 18px;
+    font-size: 13px;
     font-weight: normal;
     position: absolute;
-    top: 32px;
+    top: 30px;
     color: #3B3B3B;
     margin-left: 15px;
   }
   .login .container .forget-pass {
     position: absolute;
     right: 0;
-    margin-top: 29%;
+    margin-top: 23%;
     width: 35%;
-  
+
   }
   .login .container .forget-pass a {
-    font-size: 16px;
+    font-size: 13px;
     position: relative;
     font-weight: normal;
     color: #918F8F;
@@ -249,14 +251,14 @@
   .login .container .forget-pass a:hover::after {
     opacity: 1;
   }
-  
+
   @media only screen and (min-width: 1024px) and (max-width: 1680px) {
     .bg-illustration {
       width: 50%;
       -webkit-animation: none;
               animation: none;
     }
-  
+
     .login {
       width: 50%;
     }
@@ -266,7 +268,7 @@
     body {
       overflow-x: hidden;
     }
-  
+
     @-webkit-keyframes slideIn {
       from {
         left: -100%;
@@ -277,7 +279,7 @@
         opacity: 1;
       }
     }
-  
+
     @keyframes slideIn {
       from {
         left: -100%;
@@ -325,7 +327,7 @@
     .bg-illustration .burger-btn span:nth-child(3) {
       width: 20px;
     }
-  
+
     .login {
       float: none;
       margin: 0 auto;
@@ -360,7 +362,7 @@
       margin-top: 22px;
       top: inherit;
     }
-  
+
     .forget-pass {
       position: absolute;
       right: inherit;
@@ -491,7 +493,7 @@
     -webkit-transition-delay: 100ms;
     transition-delay: 100ms;
   }
-  
+
   .circle.xMarks {
     -moz-transition: -moz-transform 400ms ease-out, opacity 200ms ease-in;
     -o-transition: -o-transform 400ms ease-out, opacity 200ms ease-in;
@@ -524,4 +526,3 @@
     -webkit-transform: scale(2) rotate(-45deg);
     transform: scale(2) rotate(-45deg);
   }
-  

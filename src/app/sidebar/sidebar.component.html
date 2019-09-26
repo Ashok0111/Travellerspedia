@@ -3,16 +3,18 @@
     <i class="fa fa-bars"></i>
   </a>
 
-<nav id="sidebar" class="sidebar-wrapper" style="position:absolute;z-index:-5"> 
+<nav id="sidebar" class="sidebar-wrapper" style="position:absolute;z-index:-5">
     <div class="sidebar-content">
 
       <div class="sidebar-menu">
         <ul>
           <li class="header-menu">
-            <span>Dashboard 
-    <i class="fa fa-times"  (click)="close_sidebar()" ></i></span>
-             
-  
+            <span>Dashboard
+            </span><i (click)="close_sidebar()"  class="fa fa-times pull-right" style="
+    padding: 15px 20px 5px 20px;color: #6c7b88;
+"></i>
+
+
           </li>
           <li class="sidebar-dropdown">
             <a routerLink="/feed/feedroll/" routerLinkActive="active">

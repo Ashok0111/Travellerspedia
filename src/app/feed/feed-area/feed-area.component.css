@@ -1,13 +1,13 @@
 body {
     background-color: #DDD;
   }
-  
+
   h1 {
     color: #444;
     text-align: center;
     text-shadow: 1px 1px #FFF;
   }
-  
+
   #new_status {
     background-color: #FFF;
     border-radius: 5px;
@@ -17,7 +17,7 @@ body {
     padding: 0;
     max-width: 90%;
   }
-  
+
   #post_header {
     border-bottom: solid #E8E8E8 1px;
     margin: 0 2%;
@@ -47,10 +47,11 @@ body {
   #post_header .glyphicon {
     margin-right: 0.5rem;
   }
-  .filepond--drop-label > label
-  {
-    font-size: 10px;
-  }
+
+  .filepond--drop-label label {
+    font-size: 12px;
+    width: 100px;
+}
   .global_btn
   {
     border: none;
@@ -86,7 +87,7 @@ body {
     resize: none;
     width: 100%;
   }
-  
+
   #post_footer {
     border-top: solid #E8E8E8 1px;
     line-height: 3rem;
