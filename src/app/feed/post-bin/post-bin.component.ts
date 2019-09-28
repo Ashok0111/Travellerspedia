@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { posting_service } from '../../services/services_post';
 declare var $: any;
 @Component({
   selector: 'app-post-bin',
@@ -6,11 +7,21 @@ declare var $: any;
   styleUrls: ['./post-bin.component.css']
 })
 export class PostBinComponent implements OnInit {
-  items=["test1","test2","test3"];
-  
-  constructor() { }
+items=['test'];
+  constructor(private posting_service_: posting_service) {
+  }
 
-  ngOnInit() {
+  ngOnInit():Promise<boolean> {
+    return new Promise((resolve) => {
+      this.posting_service_.get_public_posts().then((res) => {
+        this.items=[];
+        this.items =res['posts'];
+        console.log(this.items);
+        })
+        .catch(err => {
+          resolve(false);
+        });
+      })
 
   }
 

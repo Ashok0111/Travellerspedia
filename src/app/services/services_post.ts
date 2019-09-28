@@ -4,7 +4,7 @@ import { Post_area } from '../service_models/api_service.model';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 @Injectable(
     {providedIn: 'root',}
-     
+
   )
   export class posting_service {
     post_model : Post_area;
@@ -20,6 +20,16 @@ import { HttpClient ,HttpHeaders} from '@angular/common/http';
         };
       return this.http.post(this.baseURL+"post/",post_data,httpOptions);
     }
+    get_public_posts()
+    {
+      let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+      headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
+      const httpOptions= {
+        headers: headers
+      };
+      return this.http.get(this.baseURL+"post/all/",httpOptions).toPromise();
+    }
+
+
 
   }
-  

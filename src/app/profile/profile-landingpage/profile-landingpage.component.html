@@ -2,33 +2,33 @@
 <aside class="profile-card">
 
     <header>
-  
+
       <!-- here’s the avatar -->
       <a href="#">
         <img src="/assets/img/user.png" />
-        <file-pond #myPond 
-    [options]="pondOptions" 
+        <file-pond #myPond
+    [options]="pondOptions"
     [files]="pondFiles"
     (oninit)="pondHandleInit()"
     (onaddfile)="pondHandleAddFile($event)">
 </file-pond>
       </a>
-  
+
       <!-- the username -->
       <h1>{{disp_name}}</h1>
-  
+
       <!-- and role or location -->
       <h2>Traveller</h2>
-  
+
     </header>
-  
+
     <!-- bit of a bio; who are you? -->
     <div class="profile-bio">
-  
-      <p>Even when everything is perfect, you can always make it better. Break barriers in your head, create something crazy and don't forget Code is Poetry...</p>
-  
-    </div>
-  
 
-  
+      <p>Even when everything is perfect, you can always make it better. Break barriers in your head, create something crazy and don't forget Code is Poetry...</p>
+
+    </div>
+
+
+
   </aside>

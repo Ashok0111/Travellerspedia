@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { posting_service } from '../../services/services_post';
 @Component({
   selector: 'app-message-service',
   templateUrl: './message-service.component.html',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageServiceComponent implements OnInit {
 
-  constructor() { }
+  // tslint:disable-next-line: variable-name
+  constructor( ) { }
 
   ngOnInit() {
   }
