@@ -16,23 +16,8 @@ export class FeedAreaComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
-  @ViewChild('myPond') myPond: any;
   @ViewChild("search")
-  pondOptions = {
-    class: 'my-filepond',
-    multiple: true,
-    allowImagePreview:true,
-    imagePreviewMaxFileSize:5,
-    imagePreviewHeight: 100,
-    imageCropAspectRatio: '1:1',
-    imageResizeTargetWidth: 100,
-    imageResizeTargetHeight: 100,
-    labelIdle: 'Attachments',
-  }
-
-  pondHandleAddFile(event: any) {
-    console.log('A file was added', event);
-  }
+  files: File[] = [];
 
   public searchElementRef: ElementRef;
 
@@ -88,6 +73,15 @@ export class FeedAreaComponent implements OnInit {
 
         });
 
+  }
+  onSelect(event) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
   }
   private setCurrentPosition() {
     if ("geolocation" in navigator) {

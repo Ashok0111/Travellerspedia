@@ -33,6 +33,8 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
+    "ngx-dropzone": "^2.1.1",
+    "ngx-dropzone-wrapper": "^8.0.0",
     "ngx-filepond": "^5.0.1",
     "popper": "^1.0.1",
     "rxjs": "~6.3.3",

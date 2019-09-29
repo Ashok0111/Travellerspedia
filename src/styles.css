@@ -15,3 +15,4 @@
   border-left: 5px solid #7885cb;
   background-color: #343a40;
 }
+@import '~dropzone/dist/min/dropzone.min.css';

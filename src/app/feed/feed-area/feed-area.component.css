@@ -53,6 +53,20 @@ body {
     font-size: 12px;
     width: 100px;
 }
+.placeholder_post_area::-webkit-input-placeholder
+{
+  font-size: large !important;
+  font-family: inherit;
+  letter-spacing: 2px;
+}
+.dz-message
+{
+  padding-left: 3% !important;
+  overflow: none;
+}
+.dz-message {
+  min-height: 80px !important;
+}
   .global_btn
   {
     border: none;
