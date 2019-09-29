@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { posting_service } from '../../services/services_post';
+import { forEach } from '@angular/router/src/utils/collection';
 declare var $: any;
 @Component({
   selector: 'app-post-bin',
@@ -17,6 +18,11 @@ like_liked: boolean = false;
       this.posting_service_.get_public_posts().then((res) => {
         this.items=[];
         this.items =res['posts'];
+        this.items.forEach(function(element)
+        {
+          var d = new Date(element.updated_on);
+          element.updated_on= d.toLocaleString();
+        });
         console.log(this.items);
         })
         .catch(err => {
