@@ -7,7 +7,8 @@ declare var $: any;
   styleUrls: ['./post-bin.component.css']
 })
 export class PostBinComponent implements OnInit {
-items=['test'];
+items=[];
+like_liked: boolean = false;
   constructor(private posting_service_: posting_service) {
   }
 
@@ -24,5 +25,48 @@ items=['test'];
       })
 
   }
+  like_post(item,like_cnt,index)
+  {
+    let like_data={'post':item};
+    this.posting_service_.like_post(like_data).subscribe((res) => {
+     if(res['code']==200) {
+       if(this.items[index].liked)
+       {
+        this.items[index].likes-=1;
+        this.items[index].liked=false;
+       }
+       else
+       {
+        this.items[index].likes+=1;
+        this.items[index].liked=true;
+       }
 
+
+          }
+
+        });
+
+  }
+  dislike_post(item,like_cnt,index)
+  {
+    let like_data={'post':item};
+    this.posting_service_.dislike_post(like_data).subscribe((res) => {
+      console.log(res,"res");
+     if(res['code']==200) {
+       if(this.items[index].dislike)
+       {
+        this.items[index].dislikes-=1;
+        this.items[index].dislike=false;
+       }
+       else
+       {
+        this.items[index].dislikes+=1;
+        this.items[index].dislike=true;
+       }
+
+
+          }
+
+        });
+  }
 }

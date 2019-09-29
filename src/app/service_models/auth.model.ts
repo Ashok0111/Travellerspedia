@@ -13,4 +13,6 @@ export class RegisterModel {
   export class Auth_Model {
     token: string ;
   }
-  
+  export class Post_like {
+    post: string ;
+  }

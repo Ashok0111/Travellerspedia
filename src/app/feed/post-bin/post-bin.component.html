@@ -1,19 +1,36 @@
 
 <div class="col-md-12">
-<div  *ngFor="let item of items;" class="outer_card">
+<div  *ngFor="let item of items; let i= index" class="outer_card">
       <div class="card-product" >
-          <img height="80" width="80" src="/assets/img/map.png">
+          <img class="img_size" src="/assets/img/map.png">
           <div class="card-product-infos">
-            <h2>Macbook Pro</h2>
+            <h2>{{item.topic}}</h2>
             <p>{{item.post}}</p>
           </div>
 
       </div>
-      <div class="row" style="margin-left:5%">
-        <p style="padding-top: 10px;">
-          <a  title="Love it" class="btn btn_emoji btn-counter" data-count="17"><span>💓</span></a>
-          <a  title="Love it" class="btn btn_emoji btn-counter" data-count="0"><span>💔</span></a>
-        </p>
+      <div class="row" style="margin-left:5%;    width: 365px;">
+            <div *ngIf="item.liked; else elseBlock">
+                <a  style="margin-top: 2%;    background-color: darksalmon;" title="Love it" class="btn btn_emoji btn-counter" (click)="like_post(item.id,item.likes,i)"  [attr.data-count]="item.likes" ><span>💓</span></a>
+
+            </div>
+            <ng-template #elseBlock>
+              <div>                <a style="margin-top: 2%;" title="Love it" class="btn btn_emoji btn-counter" (click)="like_post(item.id,item.likes,i)" [attr.data-count]="item.likes" ><span>💓</span></a>
+              </div>
+
+            </ng-template>
+
+            <div *ngIf="item.dislike; else dislikeblock">
+                <a style="    margin: 2%;background-color: darksalmon;"  title="Yukkkkk" class="btn btn_emoji btn-counter" (click)="dislike_post(item.id,item.likes,i)" [attr.data-count]="item.dislikes"><span>💔</span></a>
+
+            </div>
+            <ng-template #dislikeblock>
+              <div>
+                  <a style="    margin: 2%;"  title="Yukkkkk" class="btn btn_emoji btn-counter" (click)="dislike_post(item.id,item.likes,i)" [attr.data-count]="item.dislikes"><span>💔</span></a>
+                </div>
+
+            </ng-template>
+
       </div>
 
       <div class="detailBox">

@@ -4,9 +4,8 @@
 <main>
 
 
-<div class="col-md-12" style="    justify-content: space-evenly;
-    display: flex;">
-<div class="col-xs-12 col-md-12" id="new_status" >
+<div class="col-md-12" style="display: flex;   ">
+<div  id="new_status" >
   <div>
   <i class="fa fa-cog pull-right" style="    color: #575f67;margin: 0.3em;cursor:pointer"aria-hidden="true"></i>
   </div>
@@ -16,7 +15,7 @@
 
         <img width="30" height="30" src="/assets/img/user.png">
       <div class="textarea_wrap" style="width: 100%;">
-      <textarea type="text"  placeholder="Topic" style="font-size: 13px;font-weight: bold;"></textarea>
+      <textarea name="topic"  style=" padding-top: 0px;font-size: 12px;" #name="ngModel" [(ngModel)]="Post_area_lc.topic"  [ngModelOptions]="{standalone: false}"  type="text"  placeholder="Topic" style="font-size: 13px;font-weight: bold;"></textarea>
       <textarea name="post"  style=" padding-top: 0px;font-size: 12px;" #name="ngModel" [(ngModel)]="Post_area_lc.post_area_txt"  [ngModelOptions]="{standalone: false}" class="col-xs-11" placeholder="What's on your mind?"></textarea>
 
       </div>

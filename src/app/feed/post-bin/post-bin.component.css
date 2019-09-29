@@ -63,18 +63,22 @@ display:inline-block;
 }
 /*product name*/
 .card-product {
-    overflow: hidden;
-    height: 120px;
+    overflow: auto;
     border-bottom: 0.5px solid #b4b5b4;
     display: flex;
     align-items: center;
   }
+    .img_size
+    {
+      width: 80px;
+      height: 80px;
+    }
   .outer_card
   {
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin-top:2%;
-    width: 90%;
+    width: 55%;
     margin-left: 5%;
   }
   .card-product img {
@@ -90,7 +94,7 @@ display:inline-block;
     font-weight: bold;
     margin: 0;
   }
-  
+
   .card-product p {
     font-size: 12px;
     line-height: 1.4;
@@ -98,9 +102,10 @@ display:inline-block;
     margin-bottom: 0;
     margin-top: 8px;
   }
-  
+
   .card-product .card-product-infos {
     padding: 16px;
+    width: 90%;
   }
   /*--------------------
 Mixins
@@ -312,7 +317,7 @@ Messages
  border-right: none;
 border-left: 8px solid transparent;
  border-top: 9px solid #fff;
- 
+
  bottom: -8px;*/
 }
 .messages .message:last-child {
@@ -895,6 +900,41 @@ p { padding-left: 10px; }
   top: -1px;
 }
 .btn-counter:before {
+  transform: rotate(45deg);
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476, sizingMethod='auto expand');
+
+  background-color: #eee;
+  border: 1px solid #d3d3d3;
+  border-right: 0;
+  border-top: 0;
+  content: '';
+  position: absolute;
+  right: -13px;
+  top: 5px;
+  height: 6px;
+  width: 6px;
+  z-index: 1;
+  zoom: 1;
+}
+
+
+.btn-counter_liked { margin-right: 39px; }
+.btn-counter_liked:after,
+.btn-counter_liked:hover:after { text-shadow: none; }
+.btn-counter_liked:after {
+  border-radius: 3px;
+  border: 1px solid #d3d3d3;
+  background-color: #eee;
+  padding: 0 8px;
+  color: #777;
+  content: attr(data-count);
+  left: 100%;
+  margin-left: 8px;
+  margin-right: -13px;
+  position: absolute;
+  top: -1px;
+}
+.btn-counter_liked:before {
   transform: rotate(45deg);
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476, sizingMethod='auto expand');
 

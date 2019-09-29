@@ -15,7 +15,8 @@ body {
     font-family: 'Helvetica Neaue', 'Helvetica', sans-serif;
     padding-top: 1rem;
     padding: 0;
-    max-width: 90%;
+    width: 55%;
+    margin-left: 5%;
   }
 
   #post_header {

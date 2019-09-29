@@ -29,11 +29,11 @@ export class FeedAreaComponent implements OnInit {
     imageResizeTargetHeight: 100,
     labelIdle: 'Attachments',
   }
-  
+
   pondHandleAddFile(event: any) {
     console.log('A file was added', event);
   }
-  
+
   public searchElementRef: ElementRef;
 
   constructor(
@@ -82,6 +82,7 @@ export class FeedAreaComponent implements OnInit {
   }
   onSubmit(form : NgForm)
   {
+    console.log(form,"form");
     this.posting_service_.create_post(form.value).subscribe((res) => {
       console.log(res);
 
