@@ -9,15 +9,33 @@ declare var $: any;
 })
 export class PostBinComponent implements OnInit {
 items=[];
+def_hide=[];
 like_liked: boolean = false;
   constructor(private posting_service_: posting_service) {
   }
+  toogle_cmd(index)
+  {
 
+    if(this.def_hide[index])
+    {
+      this.def_hide[index]=false;
+    }
+    else
+    {
+      this.def_hide[index]=true;
+    }
+  }
   ngOnInit():Promise<boolean> {
     return new Promise((resolve) => {
       this.posting_service_.get_public_posts().then((res) => {
         this.items=[];
         this.items =res['posts'];
+
+        let n_ps=res['posts'].length;
+        for(let i=0;i<n_ps;i++)
+        {
+          this.def_hide.push(false);
+        }
         this.items.forEach(function(element)
         {
           var d = new Date(element.updated_on);

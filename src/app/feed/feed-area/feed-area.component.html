@@ -1,7 +1,7 @@
 
 
-<div class="container" style="margin-top: 2%;display: flex;margin-left:16%;">
-<main>
+<div class="container" style="margin-top: 2%;display: flex;">
+<main style="margin-left:11%;">
 
 
 <div class="col-md-12" style="display: flex;   ">
@@ -17,7 +17,7 @@
       <div class="textarea_wrap" style="width: 100%;">
       <textarea name="topic"  style=" padding-top: 0px;font-size: 12px;" #name="ngModel" [(ngModel)]="Post_area_lc.topic"  [ngModelOptions]="{standalone: false}"  type="text"  placeholder="Topic" style="font-size: 13px;font-weight: bold;"></textarea>
       <textarea name="post"  style=" padding-top: 0px;font-size: 12px;    height: 150px;border: 1px solid #ccc;" #name="ngModel" [(ngModel)]="Post_area_lc.post_area_txt"  [ngModelOptions]="{standalone: false}" class="col-xs-11 placeholder_post_area" placeholder="What's on your mind?"></textarea>
-      <dropzone [config]="config" [message]="'Click or drag images here to upload'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
+      <dropzone [config]="config"  [message]="'Click or drag images here to upload'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)"></dropzone>
 
       </div>
     </div>

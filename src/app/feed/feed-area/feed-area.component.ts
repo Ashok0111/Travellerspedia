@@ -5,6 +5,9 @@ import { MapsAPILoader } from '@agm/core';
 import { Post_area } from 'src/app/service_models/api_service.model';
 import { NgForm } from '@angular/forms';
 import { posting_service } from 'src/app/services/services_post';
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
+import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 @Component({
   selector: 'app-feed-area',
   templateUrl: './feed-area.component.html',
@@ -30,6 +33,11 @@ export class FeedAreaComponent implements OnInit {
   }
 
   ngOnInit() {
+    const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
+       maxFilesize: 50,
+       acceptedFiles: 'image/*',
+
+     };
     this.Post_area_lc.post_area_txt="";
     //set google maps defaults
     this.zoom = 4;
@@ -67,18 +75,20 @@ export class FeedAreaComponent implements OnInit {
   }
   onSubmit(form : NgForm)
   {
-    console.log(form,"form");
-    this.posting_service_.create_post(form.value).subscribe((res) => {
-      console.log(res);
+    console.log( this.files," this.files");
+    // this.posting_service_.create_post(form.value).subscribe((res) => {
+    //   console.log(res);
 
-        });
+    //     });
 
   }
   onSelect(event) {
     console.log(event);
     this.files.push(...event.addedFiles);
   }
-
+  public onUploadSuccess(args: any): void {
+    console.log('onUploadSuccess:', args);
+  }
   onRemove(event) {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
