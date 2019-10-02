@@ -56,11 +56,21 @@ like_liked: boolean = false;
      if(res['code']==200) {
        if(this.items[index].liked)
        {
+        if(this.items[index].dislike)
+        {
+         this.items[index].dislikes-=1;
+         this.items[index].dislike=true;
+        }
         this.items[index].likes-=1;
         this.items[index].liked=false;
        }
        else
        {
+        if(this.items[index].dislike)
+        {
+         this.items[index].dislikes-=1;
+         this.items[index].dislike=false;
+        }
         this.items[index].likes+=1;
         this.items[index].liked=true;
        }
@@ -79,11 +89,21 @@ like_liked: boolean = false;
      if(res['code']==200) {
        if(this.items[index].dislike)
        {
+        if(this.items[index].liked)
+        {
+          this.items[index].likes+=1;
+          this.items[index].liked=true;
+        }
         this.items[index].dislikes-=1;
         this.items[index].dislike=false;
        }
        else
        {
+        if(this.items[index].liked)
+        {
+          this.items[index].likes-=1;
+          this.items[index].liked=false;
+        }
         this.items[index].dislikes+=1;
         this.items[index].dislike=true;
        }
