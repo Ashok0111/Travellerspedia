@@ -107,9 +107,18 @@ border-color: transparent #f1f2f2 transparent transparent;
     margin-left: 5%;
     border: 1px solid #ccc;
   }
+  .cmd_btn_show
+  {
+    color: #7986cb;
+  }
+  .cmd_btn_hide
+  {
+    color: #5a5555;
+  }
   .cmd_box_show
   {
 display:block;
+
 
   }
   .cmd_box_hide

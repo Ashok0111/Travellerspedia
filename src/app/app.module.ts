@@ -21,10 +21,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MessageServiceComponent } from './feed/message-service/message-service.component';
 import { AuthService } from './auth/auth.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { DropzoneModule } from 'ngx-dropzone-wrapper';
-import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
-import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
-
 // import filepond module
 import { FilePondModule, registerPlugin } from 'ngx-filepond';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
@@ -37,12 +33,6 @@ registerPlugin(FilePondPluginFileValidateType,
   FilePondPluginImageEdit,
   FilePondPluginImageCrop
   );
-  const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
-    // Change this to your upload POST address:
-     url: 'https://httpbin.org/post',
-     maxFilesize: 50,
-     acceptedFiles: 'image/*'
-   };
 
 @NgModule({
   declarations: [
@@ -69,7 +59,6 @@ registerPlugin(FilePondPluginFileValidateType,
     FilePondModule,
     FormsModule,
     HttpClientModule,
-    DropzoneModule,
     ReactiveFormsModule,
     AngularFontAwesomeModule,
     AgmCoreModule.forRoot({
@@ -77,10 +66,7 @@ registerPlugin(FilePondPluginFileValidateType,
       libraries: ["places"]
     })
   ],
-  providers: [AuthService ,{
-    provide: DROPZONE_CONFIG,
-    useValue: DEFAULT_DROPZONE_CONFIG
-  }],
+  providers: [AuthService ,],
   bootstrap: [AppComponent]
 })
 export class AppModule {

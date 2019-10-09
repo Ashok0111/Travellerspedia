@@ -1,7 +1,11 @@
 
 
 
-
+@media only screen and (max-width: 600px) {
+  li .fa-times {
+    display:inline-block !important;
+  }
+}
 
   @keyframes swing {
     0% {
