@@ -27,6 +27,8 @@ export class FeedAreaComponent implements OnInit {
   }
   public searchElementRef: ElementRef;
 
+  pondFiles = [
+  ]
   constructor(
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
@@ -73,7 +75,12 @@ export class FeedAreaComponent implements OnInit {
   }
   onSubmit(form : NgForm)
   {
-    console.log( this.files," this.files");
+    form.value["attachments"]=this.pondFiles;
+    console.log(form.value,"form.value");
+    // this.posting_service_.create_post(form.value).subscribe((res) => {
+
+    // });
+    console.log(this.pondFiles);
   }
   onSelect(event) {
     console.log(event);
@@ -82,13 +89,10 @@ export class FeedAreaComponent implements OnInit {
   pondHandleInit() {
     console.log('FilePond has initialised', this.myPond);
   }
-
   pondHandleAddFile(event: any) {
-    console.log('A file was added', event);
+    this.pondFiles.push(event['file'].getFileEncodeBase64String());
   }
-  public onUploadSuccess(args: any): void {
-    console.log('onUploadSuccess:', args);
-  }
+
   onRemove(event) {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);

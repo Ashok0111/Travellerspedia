@@ -26,14 +26,15 @@ import { FilePondModule, registerPlugin } from 'ngx-filepond';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginImageEdit from 'filepond-plugin-image-edit';
 import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
+import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
 // import and register filepond file type validation plugin
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 registerPlugin(FilePondPluginFileValidateType,
-  FilePondPluginImagePreview,
+ // FilePondPluginImagePreview,
   FilePondPluginImageEdit,
-  FilePondPluginImageCrop
+  FilePondPluginImageCrop,
+  FilePondPluginFileEncode
   );
-
 @NgModule({
   declarations: [
     AppComponent,
