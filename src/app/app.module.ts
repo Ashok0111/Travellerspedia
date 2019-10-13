@@ -63,7 +63,7 @@ registerPlugin(FilePondPluginFileValidateType,
     ReactiveFormsModule,
     AngularFontAwesomeModule,
     AgmCoreModule.forRoot({
-      apiKey: 'XXX  ',
+      apiKey: 'XXX',
       libraries: ["places"]
     })
   ],
