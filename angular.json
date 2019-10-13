@@ -27,10 +27,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/filepond/dist/filepond.min.css",
               "node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css",
-              "node_modules/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css"
+              "node_modules/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css",
+              "node_modules/notiflix-angular/dist/notiflix-angular-1.1.0.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "es5BrowserSupport": true
           },

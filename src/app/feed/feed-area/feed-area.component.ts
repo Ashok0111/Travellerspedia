@@ -5,6 +5,7 @@ import { MapsAPILoader } from '@agm/core';
 import { Post_area } from 'src/app/service_models/api_service.model';
 import { NgForm } from '@angular/forms';
 import { posting_service } from 'src/app/services/services_post';
+import Notiflix from "notiflix-angular";
 @Component({
   selector: 'app-feed-area',
   templateUrl: './feed-area.component.html',
@@ -38,6 +39,14 @@ export class FeedAreaComponent implements OnInit {
   }
 
   ngOnInit() {
+    Notiflix.Notify.Init({
+      width:'300px',
+      timeout: 5000,
+      position:'top-right',
+      cssAnimationStyle: 'from-bottom',
+      distance:'15px',
+      opacity: 0.75,
+    });
     this.Post_area_lc.post_area_txt="";
     //set google maps defaults
     this.zoom = 4;
@@ -77,9 +86,10 @@ export class FeedAreaComponent implements OnInit {
   {
     form.value["attachments"]=this.pondFiles;
     console.log(form.value,"form.value");
-    // this.posting_service_.create_post(form.value).subscribe((res) => {
-
-    // });
+    this.posting_service_.create_post(form.value).subscribe((res) => {
+console.log(res);
+Notiflix.Notify.Success('Success message text');
+    });
     console.log(this.pondFiles);
   }
   onSelect(event) {
@@ -90,8 +100,8 @@ export class FeedAreaComponent implements OnInit {
     console.log('FilePond has initialised', this.myPond);
   }
   pondHandleAddFile(event: any) {
-    this.pondFiles.push(event['file'].getFileEncodeBase64String());
-  }
+    this.pondFiles.push({"file_name":event['file'].filename,"file_type":event['file'].fileType,"file_ext":event['file'].fileExtension,"data":event['file'].getFileEncodeBase64String()});
+    }
 
   onRemove(event) {
     console.log(event);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { posting_service } from '../../services/services_post';
+import { DomSanitizer } from '@angular/platform-browser';
 import { forEach } from '@angular/router/src/utils/collection';
 declare var $: any;
 @Component({
@@ -11,7 +12,7 @@ export class PostBinComponent implements OnInit {
 items=[];
 def_hide=[];
 like_liked: boolean = false;
-  constructor(private posting_service_: posting_service) {
+  constructor(private posting_service_: posting_service,private domSanitizer: DomSanitizer) {
   }
   toogle_cmd(index)
   {
