@@ -42,7 +42,7 @@ export class FeedAreaComponent implements OnInit {
     Notiflix.Notify.Init({
       width:'300px',
       timeout: 5000,
-      position:'top-right',
+      position:'right-bottom',
       cssAnimationStyle: 'from-bottom',
       distance:'15px',
       opacity: 0.75,
