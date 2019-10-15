@@ -1,4 +1,4 @@
-import { Component, OnInit,} from '@angular/core';
+import { Component, OnInit, OnDestroy,} from '@angular/core';
 import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
@@ -34,7 +34,7 @@ export class FeedAreaComponent implements OnInit {
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
     private Post_area_lc:Post_area,
-    private posting_service_:posting_service  ) {
+    private posting_service_:posting_service , ) {
 
   }
 
@@ -47,6 +47,7 @@ export class FeedAreaComponent implements OnInit {
       distance:'15px',
       opacity: 0.75,
     });
+
     this.Post_area_lc.post_area_txt="";
     //set google maps defaults
     this.zoom = 4;
@@ -82,15 +83,28 @@ export class FeedAreaComponent implements OnInit {
       });
     });
   }
+
   onSubmit(form : NgForm)
   {
     form.value["attachments"]=this.pondFiles;
     console.log(form.value,"form.value");
     this.posting_service_.create_post(form.value).subscribe((res) => {
-console.log(res);
-Notiflix.Notify.Success('Success message text');
+ console.log(res);
+
+ if(res['code']==200)
+ {
+  this.posting_service_.sendMessage(res['data']);
+  //array.splice(2, 0, "three");
+  //res['data']
+ }
+    Notiflix.Notify.Success('Posted Successfully');
+    form.reset();
+    let ele=this.myPond;
+    this.myPond.getFiles().forEach(function(e,i){
+      ele.removeFile(e.id);
+});
+    this.pondFiles=[];
     });
-    console.log(this.pondFiles);
   }
   onSelect(event) {
     console.log(event);

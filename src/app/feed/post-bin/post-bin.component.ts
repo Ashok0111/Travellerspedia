@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { posting_service } from '../../services/services_post';
 import { DomSanitizer } from '@angular/platform-browser';
-import { forEach } from '@angular/router/src/utils/collection';
+import { Subscription } from 'rxjs';
 declare var $: any;
 @Component({
   selector: 'app-post-bin',
@@ -9,10 +9,16 @@ declare var $: any;
   styleUrls: ['./post-bin.component.css']
 })
 export class PostBinComponent implements OnInit {
+  posted_item: any;
+  subscription: Subscription;
 items=[];
 def_hide=[];
 like_liked: boolean = false;
   constructor(private posting_service_: posting_service,private domSanitizer: DomSanitizer) {
+    this.subscription = this.posting_service_.getMessage().subscribe(posted_item => {
+      this.posted_item = posted_item;
+      this.items.splice(0, 0, posted_item);
+    });
   }
   toogle_cmd(index)
   {
@@ -50,6 +56,10 @@ like_liked: boolean = false;
       })
 
   }
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
+}
   like_post(item,like_cnt,index)
   {
     let like_data={'post':item};

@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Post_area } from '../service_models/api_service.model';
-
+import { Observable, Subject } from 'rxjs';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Post_like } from '../service_models/auth.model';
 @Injectable(
     {providedIn: 'root',}
-
   )
+
   export class posting_service {
     post_model : Post_area;
     post_likemodel:Post_like;
     public baseURL = environment.apiUrl;
     constructor(private http : HttpClient) { }
+    private subject = new Subject<any>();
+
+    sendMessage(message: any) {
+        this.subject.next( message);
+    }
+    getMessage(): Observable<any> {
+      return this.subject.asObservable();
+  }
+
     create_post(post_data:Post_area)
     {
         let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});

@@ -16,6 +16,7 @@ import { FeedAreaComponent } from './feed/feed-area/feed-area.component';
 import { PostBinComponent } from './feed/post-bin/post-bin.component';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MessageServiceComponent } from './feed/message-service/message-service.component';

@@ -8,8 +8,10 @@ import { Subject } from 'rxjs';
 
 @Injectable(
     {providedIn: 'root',}
-     
+
   )
+
+
   export class registration_service {
     registration_model : RegisterModel;
     login_model : LoginModel;
@@ -23,8 +25,7 @@ import { Subject } from 'rxjs';
     Login_process(login_form:LoginModel)
     {
       return this.http.post(this.baseURL+"auth/signin/",login_form);
-      
+
     }
 
   }
-  
