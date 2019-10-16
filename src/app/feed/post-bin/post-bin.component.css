@@ -70,6 +70,10 @@ width: 2em;
 height: 2em;
 background-color: #e6e7e8;
 }
+a.carousel-control-next:hover {
+  font-size: 1.2em;
+}
+
 
 .card .card__corner .card__corner-triangle {
 position: absolute;
