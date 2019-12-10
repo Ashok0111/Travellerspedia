@@ -16,7 +16,6 @@ export class LandingPageComponent implements OnInit {
     this.regininteration.navbar_landingpage(false);
     this.regininteration.feed_view(false);
     var image = document.getElementsByClassName('thumbnail');
-    new simpleParallax(image);
   }
 
 }
