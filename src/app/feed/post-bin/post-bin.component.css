@@ -96,6 +96,10 @@ border-color: transparent #f1f2f2 transparent transparent;
 .actionBox .form-group * {
   width:100%;
 }
+.actionBox
+{
+  background-color: rgb(247, 247, 247);
+}
 .taskDescription {
   margin-top:10px 0;
 }
@@ -151,8 +155,8 @@ border-color: transparent #f1f2f2 transparent transparent;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     margin-top:2%;
+    margin-bottom: 2%;
     width: 65%;
-    margin-left: 5%;
     border: 1px solid #ccc;
   }
   .cmd_btn_show

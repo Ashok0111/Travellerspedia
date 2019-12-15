@@ -11,8 +11,7 @@
           <li class="header-menu">
             <span>Dashboard
             </span><i (click)="close_sidebar()"  class="fa fa-times pull-right" style="
-    padding: 15px 20px 5px 20px;color: #6c7b88;display:none;
-"></i>
+    padding: 15px 20px 5px 20px;color: #6c7b88;display:none;"></i>
 
 
           </li>
@@ -29,7 +28,12 @@
               <span class="badge badge-pill badge-danger">1</span>
             </a>
           </li>
-
+          <li class="sidebar-dropdown">
+            <a routerLink="/user_profile_view/" routerLinkActive="active">
+              <i class="fa fa-user"></i>
+              <span>My profile</span>
+            </a>
+          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->

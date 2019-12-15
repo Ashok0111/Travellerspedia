@@ -30,6 +30,7 @@ import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
 import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
 // import and register filepond file type validation plugin
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+import { DisplayProfileComponent } from './display-profile/display-profile.component';
 registerPlugin(FilePondPluginFileValidateType,
  // FilePondPluginImagePreview,
   FilePondPluginImageEdit,
@@ -53,6 +54,7 @@ registerPlugin(FilePondPluginFileValidateType,
     LandingPageComponent,
     MessageServiceComponent,
     SidebarComponent,
+    DisplayProfileComponent,
 
   ],
   imports: [

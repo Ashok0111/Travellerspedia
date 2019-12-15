@@ -112,7 +112,7 @@
   /*----------------sidebar-wrapper----------------*/
 
   .sidebar-wrapper {
-    width: 260px;
+    width: 266px;
     height: 100%;
     max-height: 100%;
     position: fixed;
@@ -445,13 +445,15 @@
   .page-wrapper.chiller-theme.toggled #close-sidebar:hover {
       color: #ffffff;
   }
-
+.sidebar-dropdown a i{
+  font-size: 18px !important;
+}
   .chiller-theme .sidebar-wrapper ul li:hover a i,
   .chiller-theme .sidebar-wrapper .sidebar-dropdown .sidebar-submenu li a:hover:before,
   .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu:focus+span,
   .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active a i {
-      color: #16c7ff;
-      text-shadow:0px 0px 10px rgba(22, 199, 255, 0.5);
+    color: #7684ca;
+    text-shadow: 0px 0px 10px rgba(22, 104, 255, 0.5);
   }
 
   .chiller-theme .sidebar-wrapper .sidebar-menu ul li a i,
