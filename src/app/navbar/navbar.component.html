@@ -10,18 +10,31 @@
       <div class="col-lg-9 col-md-9">
         <div class="input-group">
           <input #search_chunk type="text" (input)="search_everything(search_chunk)" placeholder="Search"  class="form-control search-field">
-          <div  *ngIf="search_result"  style="height: 170px;position: absolute;
+          <div  *ngIf="search_result"  style="    max-height: 170px;
+          overflow-y: auto;position: absolute;
           top: 37px;
           display:block;
           border: 1px solid #cccccc;
-          width: 100%;
+          width: 88%;
+    left: 2px;
           background-color: #fff;"> 
-          <div style="height: 30px;border-bottom: 1px solid #ccc;background-color: #f9f9f9;cursor:pointer">
-          <span>
-            <img src="/assets/img/user.png" height="30" style="position: absolute;left: 0px;">
-            <p style="margin-left: 33px;">Ashokkumar</p></span>
+          <div class="search_row"  style="padding: 2px;background-color: #f9f9f9;cursor:pointer">
+          <span style="display:flex">
+            <img src="/assets/img/user.png" height="25"> <div style="margin-left: 1%;font-size: small;    
+            letter-spacing: 1px;"> Ashok kumar S</div>
+</span>
           </div>
-        <div style="height: 30px;border-bottom: 1px solid #ccc;background-color: #f9f9f9;"></div>  
+          <div class="search_row"  style="padding: 2px;background-color: #f9f9f9;cursor:pointer">
+            <span style="display:flex">
+              <img src="/assets/img/user.png" height="25"> <div style="margin-left: 1%;font-size: small;    
+              letter-spacing: 1px;"> Ashok kumar S</div>
+  </span>
+            </div>
+            <div  style="padding: 2px;cursor:pointer;    display: flex;
+            justify-content: flex-end;
+            font-size: smaller;">
+            <div class="wobble" style="text-decoration: underline;color: #7986cb;    margin-right: 2%;">more</div>
+            </div>
         </div>
 
           <span class="input-group-btn">
