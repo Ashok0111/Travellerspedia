@@ -21,6 +21,7 @@ export class ReginComponent implements OnInit {
   }
   ngOnDestroy() {
     // unsubscribe to ensure no memory leaks
+    //stan joined
     this.subscription.unsubscribe();
 }
 }
