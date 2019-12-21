@@ -11,6 +11,8 @@ export class NavbarComponent implements OnInit {
   feed_view=false;
   element=false;
   transparent_fromview:boolean=false;
+
+  search_result:boolean=false;
   transparent:boolean=false;
   feed_page: Subscription;
   landing_page_sub: Subscription;
@@ -26,6 +28,17 @@ export class NavbarComponent implements OnInit {
    }
   ngOnInit() {
 
+  }
+  search_everything(search_obj)
+  {
+if((search_obj.value)!='')
+{
+  this.search_result=true;
+}
+else{
+  this.search_result=false;
+}
+    
   }
   ngOnDestroy() {
     this.feed_page.unsubscribe();

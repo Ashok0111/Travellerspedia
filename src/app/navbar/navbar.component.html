@@ -9,25 +9,26 @@
     <form class="form-inline my-2 my-md-0" style="width:79%;margin-left:6%" *ngIf="element['boolean']">
       <div class="col-lg-9 col-md-9">
         <div class="input-group">
-          <input type="text" class="form-control search-field">
-          <div style="height: 170px;
-          position: absolute;
+          <input #search_chunk type="text" (input)="search_everything(search_chunk)" placeholder="Search"  class="form-control search-field">
+          <div  *ngIf="search_result"  style="height: 170px;position: absolute;
           top: 37px;
+          display:block;
           border: 1px solid #cccccc;
           width: 100%;
-          background-color: #fff;"> <div style="height: 30px;
-    border-bottom: 1px solid #ccc;    background-color: #f9f9f9;cursor:pointer">
-      <span>  <img src="/assets/img/user.png" height="30" style="
-        position: absolute;
-        left: 0px;"><p style="margin-left: 33px;">Ashokkumar</p></span></div>
-   <div style="height: 30px;
-   border-bottom: 1px solid #ccc;    background-color: #f9f9f9;"></div>  
-  
-  </div>
+          background-color: #fff;"> 
+          <div style="height: 30px;border-bottom: 1px solid #ccc;background-color: #f9f9f9;cursor:pointer">
+          <span>
+            <img src="/assets/img/user.png" height="30" style="position: absolute;left: 0px;">
+            <p style="margin-left: 33px;">Ashokkumar</p></span>
+          </div>
+        <div style="height: 30px;border-bottom: 1px solid #ccc;background-color: #f9f9f9;"></div>  
+        </div>
+
           <span class="input-group-btn">
-          <button class="btn search-btn" type="button"><i class="fa fa-search"></i></button>
+          <button class="btn search-btn" type="button" (click)="search_everything(search_chunk)"><i class="fa fa-search"></i></button>
           </span>
-        </div><!-- /input-group -->
+        </div>    <!-- /input-group -->
+
       </div>
 
   </form>

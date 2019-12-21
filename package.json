@@ -45,7 +45,7 @@
     "notiflix-angular": "^1.1.0",
     "noty": "^3.2.0-beta",
     "popper": "^1.0.1",
-    "popper.js": "^1.16.0",
+    "popper.js": "^1.11.0",
     "rxjs": "~6.3.3",
     "simple-parallax-js": "^5.1.0",
     "tslib": "^1.9.0",
