@@ -1,7 +1,9 @@
 import { Component, OnInit, ɵConsole } from '@angular/core';
 import { ReginInteration } from '../interaction_service/regin_interation';
 import { Subscription } from 'rxjs';
+
 import * as jwt_decode from "jwt-decode";
+import { posting_service } from '../services/services_post';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -16,7 +18,7 @@ export class NavbarComponent implements OnInit {
   transparent:boolean=false;
   feed_page: Subscription;
   landing_page_sub: Subscription;
-  constructor(private regininteration: ReginInteration) {
+  constructor(private posting_service_: posting_service,private regininteration: ReginInteration) {
 
     this.feed_page = this.regininteration.getFeedView().subscribe(feed_view => { 
       this.element = feed_view; 
@@ -31,6 +33,10 @@ export class NavbarComponent implements OnInit {
   }
   search_everything(search_obj)
   {
+    this.posting_service_.search_service({"search":search_obj.value}).subscribe((res) => {
+console.log(res,"result");
+    });
+
 if((search_obj.value)!='')
 {
   this.search_result=true;
