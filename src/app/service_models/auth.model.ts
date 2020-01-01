@@ -16,3 +16,8 @@ export class RegisterModel {
   export class Post_like {
     post: string ;
   }
+  export class Search_all {
+    search: string ;
+    }
+  
+   

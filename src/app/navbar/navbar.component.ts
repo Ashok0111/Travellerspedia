@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   feed_view=false;
   element=false;
   transparent_fromview:boolean=false;
-
+  search_object=[];
   search_result:boolean=false;
   transparent:boolean=false;
   feed_page: Subscription;
@@ -33,13 +33,17 @@ export class NavbarComponent implements OnInit {
   }
   search_everything(search_obj)
   {
-    this.posting_service_.search_service({"search":search_obj.value}).subscribe((res) => {
-console.log(res,"result");
-    });
+    let search_data={"search":search_obj.value}
+
 
 if((search_obj.value)!='')
 {
-  this.search_result=true;
+  
+  this.posting_service_.search_service(search_data).subscribe((res) => {
+    this.search_result=true;
+    console.log(res,"result");
+    this.search_object=res['data'];
+        });
 }
 else{
   this.search_result=false;

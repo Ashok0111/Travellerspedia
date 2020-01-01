@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Post_area } from '../service_models/api_service.model';
-import { Search_all } from '../service_models/api_service.model';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Post_like } from '../service_models/auth.model';
+import { Search_all } from '../service_models/auth.model';
 
 @Injectable(
     {providedIn: 'root',}

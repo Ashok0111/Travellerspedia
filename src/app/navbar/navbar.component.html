@@ -18,18 +18,13 @@
           width: 88%;
     left: 2px;
           background-color: #fff;"> 
-          <div class="search_row"  style="padding: 2px;background-color: #f9f9f9;cursor:pointer">
+          <div *ngFor="let item of search_object;" class="search_row"  style="padding: 2px;background-color: #f9f9f9;cursor:pointer">
           <span style="display:flex">
             <img src="/assets/img/user.png" height="25"> <div style="margin-left: 1%;font-size: small;    
-            letter-spacing: 1px;"> Ashok kumar S</div>
+            letter-spacing: 1px;"> {{item.name}}</div>
 </span>
           </div>
-          <div class="search_row"  style="padding: 2px;background-color: #f9f9f9;cursor:pointer">
-            <span style="display:flex">
-              <img src="/assets/img/user.png" height="25"> <div style="margin-left: 1%;font-size: small;    
-              letter-spacing: 1px;"> Ashok kumar S</div>
-  </span>
-            </div>
+
             <div  style="padding: 2px;cursor:pointer;    display: flex;
             justify-content: flex-end;
             font-size: smaller;">
