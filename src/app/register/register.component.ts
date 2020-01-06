@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ReginInteration } from '../interaction_service/regin_interation';
 import { registration_service } from '../services/auth.services';
-import {Router} from "@angular/router"
+import {Router} from "@angular/router";
+import Notiflix from "notiflix-angular";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -26,6 +27,14 @@ export class RegisterComponent implements OnInit {
       password:"",
 
     }
+    Notiflix.Notify.Init({
+      width:'300px',
+      timeout: 5000,
+      position:'right-bottom',
+      cssAnimationStyle: 'from-bottom',
+      distance:'15px',
+      opacity: 0.75,
+    });
   }
   onSubmit(form : NgForm)
   {
@@ -33,7 +42,8 @@ export class RegisterComponent implements OnInit {
     console.log(res,"Result");
     if(res["status"]=="Success")
     {
-      this.router.navigate(['/login'])
+      Notiflix.Notify.Success('Félicitations !!!! Profile Created Successfully.');
+      this.router.navigate(['/login']);
     }
         });
 
