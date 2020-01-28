@@ -2,8 +2,8 @@
     <header class="avatar" style="    margin-top: 20%;">
       <div class="hovereffect" style="margin-left: 28%;">
         <img class="img-responsive" width="100" height="100" src="/assets/img/user.png" />
-        <div class="overlay">
-           <a class="info" style="cursor: pointer;" data-toggle="modal" data-target="#myModal" >Edit</a>
+        <div class="overlay" style="cursor: pointer;"> 
+           <a class="info" style="cursor: pointer; display: flex; justify-content: center;" data-toggle="modal" data-target="#myModal" >Edit</a>
         </div>
     </div>  
       <h5 style="margin-top: 10%;">{{disp_name}}</h5>
@@ -20,24 +20,59 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-          <input type="file" (change)="fileChangeEvent($event)" />
-          <img width="100" height="100" class="rounded-circle" [src]="croppedImage" />
-<image-cropper
-    [imageChangedEvent]="imageChangedEvent"
-    [maintainAspectRatio]="true"
-    [aspectRatio]="4 / 3"
-    [resizeToWidth]="100"
-    format="png"
-    (imageCropped)="imageCropped($event)"
-    (imageLoaded)="imageLoaded()"
-    (cropperReady)="cropperReady()"
-    (loadImageFailed)="loadImageFailed()"
-></image-cropper>
+         
+          <div class="upload-btn-wrapper">
+            <button class="btn">Upload a file</button>
+            <input type="file" (change)="fileChangeEvent($event)" />
+          </div>
+          <div class="row" style="border: 1px solid #7785cb;height: 250px;"> 
+            <div class="col-md-6" style="display: flex;
+            flex-direction: column;
+            justify-content: center;">
+
+          <div *ngIf="show_div ;else show_img"  style="display:flex;justify-content: center;">
+            <img width="100" height="100" class="rounded-circle" style="    border: 1px solid #7785cb;" [src]="croppedImage" />
+          </div>
+          <ng-template #show_img>
+<div style="justify-content: center;
+display: flex;
+letter-spacing: 5px;
+color: #b7b7b7;"> No Image Selected</div>
+          </ng-template>
+
+            </div>
+            <div class="col-md-6" style="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid #bbc0e5;">
+              <div *ngIf="show_div ;else prev_img"  style="height: 260px; width:250px">
+                <image-cropper 
+                    [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="true"
+                    [aspectRatio]="4 / 3"
+                    [resizeToWidth]="100"
+                    format="png"
+                    (imageCropped)="imageCropped($event)"
+                    (imageLoaded)="imageLoaded()"
+                    (cropperReady)="cropperReady()"
+                    (loadImageFailed)="loadImageFailed()"
+                ></image-cropper>
+                </div>
+                <ng-template #prev_img> 
+                  <div style="justify-content: center;
+                  display: flex;
+                  letter-spacing: 5px;
+                  color: #b7b7b7;">Preview</div>
+
+                </ng-template>
+            </div>
+          </div>
 
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" (click)="Update()" class="btn btn-default" >Update</button>
+          <button type="button" (click)="close_profilepic()" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
   

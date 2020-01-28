@@ -37,7 +37,29 @@ body {
   .hovereffect:hover .overlay {
     background-color: rgba(0,0,0,0.3);
   }
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
   
+  .btn {
+    border: 2px solid #7885cb;
+    color: #7885cb;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
   .hovereffect img {
     display: block;
     position: relative;
