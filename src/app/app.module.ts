@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -64,7 +63,6 @@ registerPlugin(FilePondPluginFileValidateType,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFontAwesomeModule,
     ImageCropperModule
   ],
   providers: [AuthService ,],

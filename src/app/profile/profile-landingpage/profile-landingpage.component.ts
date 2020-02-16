@@ -29,7 +29,19 @@ export class ProfileLandingpageComponent implements OnInit {
   pondHandleAddFile(event: any) {
     console.log('A file was added', event);
   }
-  
+  onSelect(event) {
+    console.log(event);
+  }
+  pondHandleInit() {
+    console.log('FilePond has initialised', this.myPond);
+  }
+
+
+  onRemove(event) {
+    console.log(event);
+  }
+  pondFiles = [
+  ]
   public searchElementRef: ElementRef;
   ngOnInit() {
     

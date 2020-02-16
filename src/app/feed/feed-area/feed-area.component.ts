@@ -15,9 +15,9 @@ export class FeedAreaComponent implements OnInit {
  
   public searchControl: FormControl;
   public zoom: number;
-  @ViewChild("search", { static: true })
   @ViewChild('myPond') myPond: any;
   files: File[] = [];
+  topic:string;
   pondOptions = {
     class: 'my-filepond',
     multiple: true,
@@ -30,7 +30,7 @@ export class FeedAreaComponent implements OnInit {
   ]
   constructor(
     private ngZone: NgZone,
-    private Post_area_lc:Post_area,
+    public Post_area_lc:Post_area,
     private posting_service_:posting_service , ) {
 
   }
@@ -44,8 +44,8 @@ export class FeedAreaComponent implements OnInit {
       distance:'15px',
       opacity: 0.75,
     });
-
-    this.Post_area_lc.post_area_txt="";
+this.topic='';
+    this.Post_area_lc.topic="";
     //set google maps defaults
     this.zoom = 4;
 

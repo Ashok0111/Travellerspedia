@@ -7,7 +7,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
   styleUrls: ['./display-profile.component.css']
 })
 export class DisplayProfileComponent implements OnInit {
-  user_claims:string;
+  user_claims;
   constructor(private regininteration: ReginInteration) { 
     this.regininteration.feed_view(true);
     this.regininteration.navbar_landingpage(true);
