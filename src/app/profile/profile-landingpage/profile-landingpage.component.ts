@@ -13,7 +13,7 @@ export class ProfileLandingpageComponent implements OnInit {
     this.regininteration.feed_view(true);
     this.regininteration.navbar_landingpage(true);
   }
-  @ViewChild('myPond') myPond: any;
+  @ViewChild('myPond', { static: true }) myPond: any;
   disp_name:string;
   pondOptions = {
     class: 'my-filepond',

@@ -12,6 +12,7 @@ import { posting_service } from '../services/services_post';
 export class NavbarComponent implements OnInit {
   feed_view=false;
   element=false;
+  profile_control:boolean=false;
   transparent_fromview:boolean=false;
   search_object=[];
   search_result:boolean=false;
@@ -19,7 +20,7 @@ export class NavbarComponent implements OnInit {
   feed_page: Subscription;
   landing_page_sub: Subscription;
   constructor(private posting_service_: posting_service,private regininteration: ReginInteration) {
-
+this.profile_control=false;
     this.feed_page = this.regininteration.getFeedView().subscribe(feed_view => { 
       this.element = feed_view; 
     });
@@ -29,7 +30,7 @@ export class NavbarComponent implements OnInit {
     });
    }
   ngOnInit() {
-
+this.profile_control=false;
   }
   search_everything(search_obj)
   {
@@ -49,6 +50,18 @@ else{
   this.search_result=false;
 }
     
+  }
+
+  Profile_control(profile_control)
+  {
+    console.log(profile_control,"profile_control");
+    if(!profile_control)
+    {
+      this.profile_control=true;
+    }
+  else{
+    this.profile_control=false;
+  }
   }
   ngOnDestroy() {
     this.feed_page.unsubscribe();

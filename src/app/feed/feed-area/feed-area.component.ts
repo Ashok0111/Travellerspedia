@@ -15,7 +15,7 @@ export class FeedAreaComponent implements OnInit {
  
   public searchControl: FormControl;
   public zoom: number;
-  @ViewChild("search")
+  @ViewChild("search", { static: true })
   @ViewChild('myPond') myPond: any;
   files: File[] = [];
   pondOptions = {
