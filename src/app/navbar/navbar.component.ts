@@ -51,7 +51,10 @@ else{
 }
     
   }
-
+  logout()
+  {
+    
+  }
   Profile_control(profile_control)
   {
     console.log(profile_control,"profile_control");
