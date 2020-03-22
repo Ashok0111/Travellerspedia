@@ -19,5 +19,11 @@ export class RegisterModel {
   export class Search_all {
     search: string ;
     }
-  
+    export class Profile_picture {
+      file_name: string ;
+      file_ext: string ;
+      file_type: string ;
+      data: string ;
+   
+    }
    

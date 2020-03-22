@@ -27,6 +27,7 @@ import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginImageEdit from 'filepond-plugin-image-edit';
 import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
 import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import and register filepond file type validation plugin
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import { DisplayProfileComponent } from './display-profile/display-profile.component';
@@ -54,7 +55,7 @@ registerPlugin(FilePondPluginFileValidateType,
     MessageServiceComponent,
     SidebarComponent,
     DisplayProfileComponent,
-
+    
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ registerPlugin(FilePondPluginFileValidateType,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ImageCropperModule
+    ImageCropperModule,
+    NgbModule
   ],
   providers: [AuthService ,],
   bootstrap: [AppComponent]

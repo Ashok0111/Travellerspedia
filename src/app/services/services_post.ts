@@ -4,6 +4,7 @@ import { Post_area } from '../service_models/api_service.model';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { Post_like } from '../service_models/auth.model';
+import { Profile_picture } from '../service_models/auth.model';
 import { Search_all } from '../service_models/auth.model';
 
 @Injectable(
@@ -33,6 +34,15 @@ import { Search_all } from '../service_models/auth.model';
           headers: headers
         };
       return this.http.post(this.baseURL+"post/",post_data,httpOptions);
+    }
+    upload_profilepic(profile_data:Profile_picture)
+    {
+        let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+        headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
+        const httpOptions= {
+          headers: headers
+        };
+      return this.http.post(this.baseURL+"profile/upload",profile_data,httpOptions);
     }
     search_service(search_data:Search_all)
     {

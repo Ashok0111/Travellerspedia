@@ -3,14 +3,15 @@
 
 <div  *ngFor="let item of items; let i= index" class="outer_card">
   <div>
+    
     <div style="
     padding-left: 0.5%;
     padding-top: 1%;
     padding-bottom: 1%;
     display: flex;
     background-color: #343a40;">
-<img style="    margin-left: 8px;" class="rounded-circle" height="20" src="/assets/img/user.png" width="20">
-<a routerLink="/user_profile_view/" routerLinkActive="active">
+<div class="col-md-1"><img style="margin-left: 8px;" class="rounded-circle" height="25" src="data:image/jpg;base64,{{item.author.profile_image}}" width="25"></div>
+<div class="col-md-9" style="    display: flex;justify-content: left;padding-left: 0px;"><a routerLink="/user_profile_view/" routerLinkActive="active">
 <p style="
 font-size: 12px;
     color: #ffffff;
@@ -19,7 +20,20 @@ font-size: 12px;
     font-weight: bolder;
     margin-bottom: 0px;
     padding-left: 15px;
+    padding-top: 5px;
 ">{{item.author.name}}</p></a></div>
+    <div class="col-md-2 menu_styles" >
+      <div ngbDropdown class="d-inline-block">
+        <i class="fa fa-ellipsis-v" id="post_settings" ngbDropdownToggle aria-hidden="true"></i>
+      
+      <div ngbDropdownMenu aria-labelledby="post_settings" style="right: 0;left: auto;">
+        <a class="dropdown-item settings_black" >Settings</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item settings_black" >Delete Post</a>
+      </div></div>
+
+    </div>
+</div>
 </div>
 
       <div class="card-product" >

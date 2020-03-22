@@ -134,6 +134,23 @@ border-color: transparent #f1f2f2 transparent transparent;
   font-family:verdana;
   font-size:11px;
 }
+#post_settings:after {
+  content: none;
+}
+
+#post_settings{
+  font-size: 15px;
+  padding:6px;
+}
+
+.menu_styles
+{
+
+  display: flex;
+    justify-content: flex-end;
+    color: #7785cb;
+    cursor:pointer;
+}
 .actionBox {
   border-top:1px dotted #bbb;
   padding:10px;

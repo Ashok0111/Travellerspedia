@@ -42,7 +42,6 @@ if((search_obj.value)!='')
   
   this.posting_service_.search_service(search_data).subscribe((res) => {
     this.search_result=true;
-    console.log(res,"result");
     this.search_object=res['data'];
         });
 }
@@ -57,7 +56,6 @@ else{
   }
   Profile_control(profile_control)
   {
-    console.log(profile_control,"profile_control");
     if(!profile_control)
     {
       this.profile_control=true;

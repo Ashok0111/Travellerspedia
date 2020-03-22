@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   onSubmit(form : NgForm)
   {
     this.register_user.Login_process(form.value).subscribe((res) => {
-      console.log(res);
+      console.log(res,"result");
       if(res["status"]=="Success")
       {
         localStorage.setItem('a-t', res["access-token"]);

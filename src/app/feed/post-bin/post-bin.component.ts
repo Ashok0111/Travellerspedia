@@ -37,7 +37,7 @@ like_liked: boolean = false;
       this.posting_service_.get_public_posts().then((res) => {
         this.items=[];
         this.items =res['posts'];
-
+          console.log(res,"posts");
         let n_ps=res['posts'].length;
         for(let i=0;i<n_ps;i++)
         {

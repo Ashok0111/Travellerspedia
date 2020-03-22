@@ -1,5 +1,6 @@
 
 <nav  *ngIf="transparent['boolean'];else elseBlock" class="nav_size navbar navbar-expand-md navbar-dark bg-dark" style="z-index:5;position:sticky;top:0px;height: 20%; box-shadow: 1px 0 6px #7885cb;">
+
   <a routerLink="/feed/feedroll" routerLinkActive="active"> <button class=" btn_small_v1 button button--winona button--border-thin button--text-thick button--inverted" style="    letter-spacing: 3px;" data-text="Travellerspedia"><span>Travellerspedia</span></button>
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +21,7 @@
           background-color: #fff;"> 
           <div *ngFor="let item of search_object;" class="search_row"  style="padding: 2px;background-color: #f9f9f9;cursor:pointer">
           <span style="display:flex">
-            <img src="/assets/img/user.png" height="25"> <div style="margin-left: 1%;font-size: small;    
+            <img class="rounded-circle" src="data:image/jpg;base64,{{item.profile_image}}"height="25"> <div style="margin-left: 1%;font-size: small;    
             letter-spacing: 1px;"> {{item.name}}</div>
 </span>
           </div>
@@ -50,22 +51,18 @@
 
 <div *ngIf="element['boolean']" class="notification notify show-count bg-3 " style="cursor:pointer" data-count="1" >
 </div>
-  <div class="bg-3" *ngIf="element['boolean']" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);    padding: 0.1em;">
-
-    <li class="nav-item dropdown">
-
-        <div *ngIf="profile_control" class="dropdown-menu dropdown-menu-right" style="display:block !important" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item settings_black" routerLink="/user_profile_view">Profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item settings_black" (click)="logout()" routerLink="/" href="#">Logout</a>
-        </div>
-
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdowns" (click)="Profile_control(profile_control)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="/assets/img/user.png" width="30" height="30" class="rounded-circle">
-        </a>
-      </li>
-
+<div ngbDropdown class="d-inline-block" *ngIf="element['boolean']">
+  <a  id="dropdownMenuButton" ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdowns" (click)="Profile_control(profile_control)" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="/assets/img/user.png" width="30" height="30" class="rounded-circle">
+  </a>
+  <div ngbDropdownMenu aria-labelledby="dropdownMenuButton" style="right: 0;left: auto;">
+    <a class="dropdown-item settings_black" routerLink="/user_profile_view">Profile</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item settings_black" (click)="logout()" routerLink="/" href="#">Logout</a>
+  </div>
 </div>
+
+  
   </div>
 
 
