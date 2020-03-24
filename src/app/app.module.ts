@@ -31,6 +31,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import and register filepond file type validation plugin
 import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import { DisplayProfileComponent } from './display-profile/display-profile.component';
+import { ChatboxComponent } from './feed/chatbox/chatbox.component';
 registerPlugin(FilePondPluginFileValidateType,
  // FilePondPluginImagePreview,
   FilePondPluginImageEdit,
@@ -55,6 +56,7 @@ registerPlugin(FilePondPluginFileValidateType,
     MessageServiceComponent,
     SidebarComponent,
     DisplayProfileComponent,
+    ChatboxComponent,
     
   ],
   imports: [
