@@ -3,7 +3,10 @@
 body {
     background-color: #DDD;
   }
-
+  a:hover {
+    color: #0056b3;
+    text-decoration: none !important;
+}
   h1 {
     color: #444;
     text-align: center;

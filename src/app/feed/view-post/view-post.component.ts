@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { posting_service } from '../../services/services_post';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
-declare var $: any;
 @Component({
-  selector: 'app-post-bin',
-  templateUrl: './post-bin.component.html',
-  styleUrls: ['./post-bin.component.css']
+  selector: 'app-view-post',
+  templateUrl: './view-post.component.html',
+  styleUrls: ['./view-post.component.css']
 })
-export class PostBinComponent implements OnInit {
+export class ViewPostComponent implements OnInit {
   posted_item: any;
   subscription: Subscription;
   items=[];
     def_hide=[];
-  like_liked: boolean = false;
+    like_liked: boolean = false;
   constructor(private posting_service_: posting_service,private domSanitizer: DomSanitizer) {
     this.subscription = this.posting_service_.getMessage().subscribe(posted_item => {
       this.posted_item = posted_item;
@@ -34,10 +33,10 @@ export class PostBinComponent implements OnInit {
   }
   ngOnInit():Promise<boolean> {
     return new Promise((resolve) => {
-      this.posting_service_.get_public_posts().then((res) => {
+      this.posting_service_.get_a_post({post_id:'5e527e6fc5e93032c6b1ceef'}).then((res) => {
         this.items=[];
         this.items =res['posts'];
-          console.log(res,"posts");
+          console.log(res,"single_post");
         let n_ps=res['posts'].length;
         for(let i=0;i<n_ps;i++)
         {
@@ -57,7 +56,6 @@ export class PostBinComponent implements OnInit {
 
   }
   ngOnDestroy() {
-    // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();
 }
   like_post(item,like_cnt,index)

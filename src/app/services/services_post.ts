@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment';
 import { Post_area } from '../service_models/api_service.model';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
-import { Post_like } from '../service_models/auth.model';
+import { Post_like, Single_post } from '../service_models/auth.model';
 import { Profile_picture } from '../service_models/auth.model';
 import { Search_all } from '../service_models/auth.model';
 
@@ -54,7 +54,16 @@ import { Search_all } from '../service_models/auth.model';
         };
       return this.http.post(this.baseURL+"search",search_data,httpOptions);
     }
-
+    get_a_post(s_post:Single_post)
+    {
+      let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+      headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
+      const httpOptions= {
+        headers: headers
+      };
+      console.log(s_post['post_id'],"s_post['post_id']");
+      return this.http.get(this.baseURL+"post/"+s_post['post_id'],httpOptions).toPromise();
+    }
     get_public_posts()
     {
       let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
@@ -64,6 +73,7 @@ import { Search_all } from '../service_models/auth.model';
       };
       return this.http.get(this.baseURL+"post/all/",httpOptions).toPromise();
     }
+    
     like_post(post_op:Post_like)
     {
       let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});

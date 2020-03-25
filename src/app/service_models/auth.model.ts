@@ -19,6 +19,9 @@ export class RegisterModel {
   export class Search_all {
     search: string ;
     }
+    export class Single_post {
+      post_id: string ;
+      }
     export class Profile_picture {
       file_name: string ;
       file_ext: string ;

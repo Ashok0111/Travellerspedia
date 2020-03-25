@@ -137,10 +137,21 @@ border-color: transparent #f1f2f2 transparent transparent;
 #post_settings:after {
   content: none;
 }
-
+.u_name
+{
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
 #post_settings{
   font-size: 15px;
   padding:6px;
+  color:white !important;
 }
 
 .menu_styles

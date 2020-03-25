@@ -12,6 +12,7 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { MessageServiceComponent } from './feed/message-service/message-service.component';
 import { FeedAreaComponent } from './feed/feed-area/feed-area.component';
 import { DisplayProfileComponent } from './display-profile/display-profile.component';
+import { ViewPostComponent } from './feed/view-post/view-post.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent ,  },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'feed', component: FeedComponent ,canActivate: [AuthGuard],children: [
      { path: 'chat', component: MessageServiceComponent },
      { path: 'feedroll', component: FeedAreaComponent },
+     { path: 'postlake', component: ViewPostComponent },
      
     ]},
   { path: 'profile', component: ProfileComponent,canActivate: [AuthGuard],

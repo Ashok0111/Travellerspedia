@@ -1,13 +1,15 @@
 
 <nav  *ngIf="transparent['boolean'];else elseBlock" class="nav_size navbar navbar-expand-md navbar-dark bg-dark" style="z-index:5;position:sticky;top:0px;height: 20%; box-shadow: 1px 0 6px #7885cb;">
-
+<div class="col-md-2" style="display: flex;justify-content: center;">
   <a routerLink="/feed/feedroll" routerLinkActive="active"> <button class=" btn_small_v1 button button--winona button--border-thin button--text-thick button--inverted" style="    letter-spacing: 3px;" data-text="Travellerspedia"><span>Travellerspedia</span></button>
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+</div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <form class="form-inline my-2 my-md-0" style="width:79%;margin-left:6%" *ngIf="element['boolean']">
+    <form class="form-inline my-2 my-md-0" style="width: 87%;
+    margin-left: 2%;" *ngIf="element['boolean']">
       <div class="col-lg-9 col-md-9">
         <div class="input-group">
           <input #search_chunk type="text" (input)="search_everything(search_chunk)" placeholder="Search"  class="form-control search-field">
