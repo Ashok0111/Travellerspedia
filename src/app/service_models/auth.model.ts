@@ -13,7 +13,14 @@ export class RegisterModel {
   export class Auth_Model {
     token: string ;
   }
+  export class Create_comment {
+    post_id: string ;
+    comment: string ;
+  }
   export class Post_like {
+    post: string ;
+  }
+  export class Delete_post {
     post: string ;
   }
   export class Search_all {

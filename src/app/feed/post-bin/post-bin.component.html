@@ -31,7 +31,7 @@
         <a class="dropdown-item settings_black" >Share</a>
         
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item settings_black" >Delete Post</a>
+        <a class="dropdown-item settings_black" (click)="delete_post(item.id,i)" >Delete Post</a>
       </div>
     </div>
 
@@ -112,41 +112,29 @@
 
       <div class="detailBox" [ngClass]="def_hide[i] ? 'cmd_box_show' : 'cmd_box_hide'">
         <div class="actionBox">
-            <ul class="commentList">
-                <li>
+            <ul class="commentList cs_line swing">
+                <li *ngFor="let comment of item.comments; let nth_c= index" [ngClass]="cmd_ob[i][nth_c]['state'] ? 'comment_sec swing_hide' : 'show ' " >
+
+                  <div class="comment_name">{{comment.author.name}}</div>
                     <div class="commenterImage">
                       <img src="http://placekitten.com/50/50" />
                     </div>
-                    <div class="commentText">
-                        <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
+                    <div class="commentText" style="width:98%">
+                        <p class="">{{comment.comment}}</p> <span class="date sub-text">{{comment.created_on}}</span>
 
                     </div>
+                    <div class="commentText" style="display: table-cell; cursor:pointer" (click)="delete_comment(i,nth_c)">
+                    <i class="fa fa-trash" style="font-size: 15px;color: #343a40;"></i>
+                  </div>
                 </li>
-                <li>
-                    <div class="commenterImage">
-                      <img src="http://placekitten.com/45/45" />
-                    </div>
-                    <div class="commentText">
-                        <p class="">Hello this is a test comment and this comment is particularly very long and it goes on and on and on.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="commenterImage">
-                      <img src="http://placekitten.com/40/40" />
-                    </div>
-                    <div class="commentText">
-                        <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March 5th, 2014</span>
-
-                    </div>
-                </li>
+                
             </ul>
             <form class="form-inline" role="form">
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="Your comments" ></textarea>
+                    <textarea class="form-control text_comments" placeholder="Your comments" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}" ></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary global_btn">Add</button>
+                    <button class="btn btn-primary global_btn" (click)="create_comment(item.id,comment)" >Add Comment</button>
                 </div>
             </form>
         </div>
