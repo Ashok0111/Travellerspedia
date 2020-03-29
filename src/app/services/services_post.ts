@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment';
 import { Post_area } from '../service_models/api_service.model';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
-import { Post_like, Single_post ,Delete_post,Create_comment} from '../service_models/auth.model';
+import { Post_like, Single_post ,Delete_post,Create_comment,Comment_l_d} from '../service_models/auth.model';
 import { Profile_picture } from '../service_models/auth.model';
 import { Search_all } from '../service_models/auth.model';
 
@@ -93,8 +93,24 @@ import { Search_all } from '../service_models/auth.model';
       };
     return this.http.post(this.baseURL+"post/like",post_op,httpOptions);
     }
-
-    
+    like_comment(like_c:Comment_l_d)
+    {
+      let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+      headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
+      const httpOptions= {
+        headers: headers
+      };
+    return this.http.post(this.baseURL+"comment/like",like_c,httpOptions);
+    }
+    dislike_comment(dlike_c:Comment_l_d)
+    {
+      let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+      headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
+      const httpOptions= {
+        headers: headers
+      };
+    return this.http.post(this.baseURL+"comment/dislike",dlike_c,httpOptions);
+    }   
     delete_post(delete_:Delete_post)
     {
       let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});

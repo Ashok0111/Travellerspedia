@@ -40,7 +40,7 @@ export class PostBinComponent implements OnInit {
 
     Notiflix.Notify.Init({
       width:'300px',
-      timeout: 5000,
+      timeout: 2000,
       position:'right-bottom',
       cssAnimationStyle: 'from-bottom',
       distance:'15px',
@@ -50,13 +50,18 @@ export class PostBinComponent implements OnInit {
     return new Promise((resolve) => {
       this.posting_service_.get_public_posts().then((res) => {
         this.items=[];
+        console.log(res['posts'],"res['posts']");
         this.items =res['posts'];
-          console.log(res,"posts");
         let n_ps=res['posts'].length;
         for(let i=0;i<n_ps;i++)
         {
-          this.def_hide.push(false);
           let cmd_l=res['posts'][i]['comments'].length;
+          if(cmd_l>0)
+          {
+            this.def_hide.push(true);
+          }else{
+            this.def_hide.push(false);
+          }
           this.cmd_ob[i]=[];
         for(let j=0;j<cmd_l;j++)
         {
@@ -64,7 +69,6 @@ export class PostBinComponent implements OnInit {
             
         }
       }
-      console.log(this.cmd_ob,"cmd_obj");
         this.items.forEach(function(element)
         {
           var d = new Date(element.updated_on);
@@ -115,6 +119,41 @@ export class PostBinComponent implements OnInit {
         });
 
   }
+  like_comment(item,index,c_index)
+  {
+    let like_data={'comment':item};
+    this.posting_service_.like_comment(like_data).subscribe((res) => {
+     if(res['code']==200) {
+       console.log(item,index,c_index,"comment",this.items);
+       if(this.items[index]['comments'][c_index].liked)
+       {
+        if(this.items[index]['comments'][c_index].dislike)
+        {
+         this.items[index]['comments'][c_index].dislikes-=1;
+         this.items[index]['comments'][c_index].dislike=true;
+        }
+        this.items[index]['comments'][c_index].likes-=1;
+        this.items[index]['comments'][c_index].liked=false;
+       }
+       else
+       {
+        if(this.items[index]['comments'][c_index].dislike)
+        {
+         this.items[index]['comments'][c_index].dislikes-=1;
+         this.items[index]['comments'][c_index].dislike=false;
+        }
+        this.items[index]['comments'][c_index].likes+=1;
+        this.items[index]['comments'][c_index].liked=true;
+       }
+
+
+          }
+
+        });
+
+  }
+
+
   delete_post(item,index)
   {
     let like_data={'post':item};
@@ -130,10 +169,11 @@ export class PostBinComponent implements OnInit {
   delete_comment(post,nth_c)
   {
     var del_ob=this.items[post]['comments'];
-   // this.cmd_ob[post][nth_c]['state']=true;
-    del_ob.splice(nth_c, 1);
+    this.cmd_ob[post][nth_c]['state']=true;
+   // del_ob.splice(nth_c, 1);
+   Notiflix.Notify.Success('Deleted Your Comment');
   }
-  create_comment(item,comment)
+  create_comment(item,comment,post_ite)
   {
     let comment_ob={'post_id':item,'comment':comment};
     this.posting_service_.create_comment(comment_ob).subscribe((res) => {
@@ -144,11 +184,42 @@ export class PostBinComponent implements OnInit {
 
         });
   }
+  dislike_comment(item,index,c_index)
+  {
+    let dlike_data={'comment':item};
+    this.posting_service_.dislike_comment(dlike_data).subscribe((res) => {
+     if(res['code']==200) {
+       if(this.items[index]['comments'][c_index].dislike)
+       {
+        if(this.items[index]['comments'][c_index].liked)
+        {
+          this.items[index]['comments'][c_index].likes+=1;
+          this.items[index]['comments'][c_index].liked=true;
+        }
+        this.items[index]['comments'][c_index].dislikes-=1;
+        this.items[index]['comments'][c_index].dislike=false;
+       }
+       else
+       {
+        if(this.items[index]['comments'][c_index].liked)
+        {
+          this.items[index]['comments'][c_index].likes-=1;
+          this.items[index]['comments'][c_index].liked=false;
+        }
+        this.items[index]['comments'][c_index].dislikes+=1;
+        this.items[index]['comments'][c_index].dislike=true;
+       }
+
+
+          }
+
+        });
+  }
+  
   dislike_post(item,like_cnt,index)
   {
     let like_data={'post':item};
     this.posting_service_.dislike_post(like_data).subscribe((res) => {
-      console.log(res,"res");
      if(res['code']==200) {
        if(this.items[index].dislike)
        {

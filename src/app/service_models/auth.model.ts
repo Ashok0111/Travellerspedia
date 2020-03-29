@@ -20,6 +20,9 @@ export class RegisterModel {
   export class Post_like {
     post: string ;
   }
+  export class Comment_l_d {
+    comment: string ;
+  }
   export class Delete_post {
     post: string ;
   }

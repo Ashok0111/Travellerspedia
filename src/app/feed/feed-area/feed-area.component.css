@@ -7,6 +7,7 @@ body {
     color: #0056b3;
     text-decoration: none !important;
 }
+
   h1 {
     color: #444;
     text-align: center;
@@ -100,7 +101,7 @@ body {
     padding: 0;
   }
   #post_content .textarea_wrap {
-    cursor: text;
+    cursor: pointer;
   }
   #post_content textarea {
     border: 0;

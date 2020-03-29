@@ -3,10 +3,33 @@
         <div class="chat-head">
             <img width="30" height="30" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
             <h4>Message</h4>
-            <i class="fa fa-minus chat-box_minus animated bounce"></i> </div>
-        <div class="chat-body">
-            <div class="msg-insert">
-</div>
+            <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_bx()"></i> </div>
+        <div class="chat-body" [ngClass]="chat_box_tgl ? '' : 'chat_box_tgl_h'">
+            <div class="list">
+                <li class="clearfix" style="display:flex;padding: 2%;margin: 1%;
+                background-color: #e8e3dd;">
+                  <img width="30" height="30" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+                  <div class="about" style="margin-left: 6%;">
+                    <div class="name">Vincent Porter</div>
+                    <div class="status">
+                      <i class="fa fa-circle online"></i> online
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="clearfix" style="display:flex;padding: 2%;margin: 1%;
+                background-color: #e8e3dd;">
+                  <img width="30" height="30" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+                  <div class="about" style="margin-left: 6%;">
+                    <div class="name">Aiden Chavez</div>
+                    <div class="status">
+                      <i class="fa fa-circle offline"></i> left 7 mins ago
+                    </div>
+                  </div>
+                </li>
+                
+        
+            </div>
             <div class="chat-text">
                 <textarea placeholder="Search" class="form-control ng-pristine ng-valid ng-touched chat_txt"></textarea>
             </div>

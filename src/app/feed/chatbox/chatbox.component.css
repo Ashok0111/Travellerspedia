@@ -31,6 +31,16 @@
 			font-size: 16px;
 			cursor:pointer;
 }
+.name{
+	font-size: 0.8rem;
+}
+.status{
+	font-size: 0.8rem;
+}
+.chat_box_tgl_h
+{
+	display:none;
+}
 .chat-head{
 	width: inherit;
 	height: 30px;
@@ -38,7 +48,7 @@
 }
 .chat-head h4{
     color: #f1f0ef;
-    font-size: 15px;
+    font-size: 13px;
     padding-top: 4px !important;
 	display: inline-block;
 }

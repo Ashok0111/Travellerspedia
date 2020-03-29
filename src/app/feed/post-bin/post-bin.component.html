@@ -78,7 +78,7 @@
 
             </div>
             <ng-template #elseBlock>
-              <div>                <a style="margin-top: 2%;" title="Love it" class="btn btn_emoji btn-counter" (click)="like_post(item.id,item.likes,i)" [attr.data-count]="item.likes" ><span>💓</span></a>
+              <div> <a style="margin-top: 2%;" title="Love it" class="btn btn_emoji btn-counter" (click)="like_post(item.id,item.likes,i)" [attr.data-count]="item.likes" ><span>💓</span></a>
               </div>
 
             </ng-template>
@@ -113,7 +113,7 @@
       <div class="detailBox" [ngClass]="def_hide[i] ? 'cmd_box_show' : 'cmd_box_hide'">
         <div class="actionBox">
             <ul class="commentList cs_line swing">
-                <li *ngFor="let comment of item.comments; let nth_c= index" [ngClass]="cmd_ob[i][nth_c]['state'] ? 'comment_sec swing_hide' : 'show ' " >
+                <li *ngFor="let comment of item.comments; let nth_c= index" [ngClass]="cmd_ob[i][nth_c]['state'] ? 'comment_sec swing_hide' : 'show comment_sec'" >
 
                   <div class="comment_name">{{comment.author.name}}</div>
                     <div class="commenterImage">
@@ -123,8 +123,32 @@
                         <p class="">{{comment.comment}}</p> <span class="date sub-text">{{comment.created_on}}</span>
 
                     </div>
-                    <div class="commentText" style="display: table-cell; cursor:pointer" (click)="delete_comment(i,nth_c)">
-                    <i class="fa fa-trash" style="font-size: 15px;color: #343a40;"></i>
+                    <div class="commentText" style="display: table-cell; cursor:pointer" >
+                    <i class="fa fa-trash" style="font-size: 15px;color: #343a40;" title="Delete Comment" (click)="delete_comment(i,nth_c)" ></i>
+                  </div>
+                  <div style="display: flex;">
+                    <div style="display: flex;
+                    width: 30%;">
+                    <div *ngIf="comment.liked; else cmd_else_b">
+                            <a  style="margin-top: 2%;    background-color: darksalmon;" title="Love it" class="btn btn_emoji btn-counter" (click)="like_comment(comment.id,i,nth_c)"  [attr.data-count]="comment.likes" ><span>💓</span></a>
+            
+                        </div>
+                        <ng-template #cmd_else_b>
+                          <div> <a style="margin-top: 2%;" title="i like" class="btn btn_emoji btn-counter" (click)="like_comment(comment.id,i,nth_c)" [attr.data-count]="comment.likes" ><span>💓</span></a>
+                          </div>
+            
+                        </ng-template>
+                        <div *ngIf="comment.dislike; else cmd_dislikeblock">
+                            <a style="    margin: 2%;background-color: darksalmon;"  title="Yukkkkk" class="btn btn_emoji btn-counter" (click)="dislike_comment(comment.id,i,nth_c)" [attr.data-count]="comment.dislikes"><span>💔</span></a>
+            
+                        </div>
+                        <ng-template #cmd_dislikeblock>
+                          <div>
+                              <a style="    margin: 2%;"  title="i dislike" class="btn btn_emoji btn-counter" (click)="dislike_comment(comment.id,i,nth_c)" [attr.data-count]="comment.dislikes"><span>💔</span></a>
+                            </div>
+            
+                        </ng-template>
+                      </div>
                   </div>
                 </li>
                 
@@ -134,7 +158,7 @@
                     <textarea class="form-control text_comments" placeholder="Your comments" [(ngModel)]="comment" [ngModelOptions]="{standalone: true}" ></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary global_btn" (click)="create_comment(item.id,comment)" >Add Comment</button>
+                    <button class="btn btn-primary global_btn" (click)="create_comment(item.id,comment,i)" >Add Comment</button>
                 </div>
             </form>
         </div>

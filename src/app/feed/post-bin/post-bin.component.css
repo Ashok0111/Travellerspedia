@@ -1137,8 +1137,9 @@ p { padding-left: 10px; }
 
 
   li.comment_sec:hover {
-    background-color: white;
+    background-color:#dee2e6;
     border-left: 3px solid #7986cb;
+
 }
 
 .cs_line::-webkit-scrollbar-track
@@ -1172,8 +1173,10 @@ p { padding-left: 10px; }
 }
 .swing_hide{
   transform: none !important;
+      display: none;
 }
 .swing li.show.comment_sec {
+  padding:1%;
   opacity: 1;
   transform: none;
   transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
