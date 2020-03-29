@@ -20,6 +20,13 @@ export class PostBinComponent implements OnInit {
     this.subscription = this.posting_service_.getMessage().subscribe(posted_item => {
       this.posted_item = posted_item;
       this.items.splice(0, 0, posted_item);
+        let cmd_l=this.posted_item['comments'].length;
+        if(cmd_l>0)
+        {
+          this.def_hide.splice(0, 0, [true]);
+        }else{
+          this.def_hide.splice(0, 0, [false]);
+        }
     });
   }
   
@@ -69,11 +76,7 @@ export class PostBinComponent implements OnInit {
             
         }
       }
-        this.items.forEach(function(element)
-        {
-          var d = new Date(element.updated_on);
-          element.updated_on= d.toLocaleString();
-        });
+
         
 
         })
@@ -180,6 +183,7 @@ export class PostBinComponent implements OnInit {
      if(res['code']==200) {
             //  Notiflix.Notify.Success('Deleted Your Post');
             //   this.items.splice(index, 1);
+            this.items[post_ite]['comments'](post_ite, 1);
           }
 
         });

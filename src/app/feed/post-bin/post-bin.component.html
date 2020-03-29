@@ -26,12 +26,14 @@
         <i class="fa fa-ellipsis-v" id="post_settings" ngbDropdownToggle aria-hidden="true"></i>
       
       <div ngbDropdownMenu aria-labelledby="post_settings" style="right: 0;left: auto;">
-        <a class="dropdown-item settings_black" >Report</a>
-        <div class="dropdown-divider"></div>
+
+        <a *ngIf="item.owner" class="dropdown-item settings_black" >Edit</a>
+        <div *ngIf="item.owner" class="dropdown-divider"></div>
         <a class="dropdown-item settings_black" >Share</a>
-        
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item settings_black" (click)="delete_post(item.id,i)" >Delete Post</a>
+        <div *ngIf="item.owner" class="dropdown-divider"></div>
+        <a *ngIf="item.owner" class="dropdown-item settings_black" (click)="delete_post(item.id,i)" >Delete Post</a>
+        <div *ngIf="item.owner==false" class="dropdown-divider"></div>
+        <a *ngIf="item.owner==false" class="dropdown-item settings_black" >Report</a>
       </div>
     </div>
 
@@ -113,7 +115,7 @@
       <div class="detailBox" [ngClass]="def_hide[i] ? 'cmd_box_show' : 'cmd_box_hide'">
         <div class="actionBox">
             <ul class="commentList cs_line swing">
-                <li *ngFor="let comment of item.comments; let nth_c= index" [ngClass]="cmd_ob[i][nth_c]['state'] ? 'comment_sec swing_hide' : 'show comment_sec'" >
+                <li *ngFor="let comment of item.comments; let nth_c= index" class="show comment_sec" >
 
                   <div class="comment_name">{{comment.author.name}}</div>
                     <div class="commenterImage">

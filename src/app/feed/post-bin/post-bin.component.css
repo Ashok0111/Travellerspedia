@@ -1181,3 +1181,8 @@ p { padding-left: 10px; }
   transform: none;
   transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 }
+a:not([href]):hover {
+  color: white;
+  text-decoration: none;
+  background-color: #343a40;
+}

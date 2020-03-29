@@ -48,13 +48,7 @@ this.topic='';
     this.Post_area_lc.topic="";
     //set google maps defaults
     this.zoom = 4;
-
-    //create search FormControl
     this.searchControl = new FormControl();
-
-    //set current position
-
-    //load Places Autocomplete
 
   }
 
@@ -68,8 +62,6 @@ this.topic='';
  if(res['code']==200)
  {
   this.posting_service_.sendMessage(res['data']);
-  //array.splice(2, 0, "three");
-  //res['data']
  }
     Notiflix.Notify.Success('Posted Successfully');
     form.reset();
