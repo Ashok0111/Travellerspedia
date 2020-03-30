@@ -25,7 +25,7 @@ export class PostBinComponent implements OnInit {
         {
           this.def_hide.splice(0, 0, [true]);
         }else{
-          this.def_hide.splice(0, 0, [false]);
+          this.def_hide.splice(0, 0, [true]);
         }
     });
   }
@@ -67,14 +67,10 @@ export class PostBinComponent implements OnInit {
           {
             this.def_hide.push(true);
           }else{
-            this.def_hide.push(false);
+            this.def_hide.push(true);
           }
           this.cmd_ob[i]=[];
-        for(let j=0;j<cmd_l;j++)
-        {
-          this.cmd_ob[i].push({'state':false});
-            
-        }
+    
       }
 
         

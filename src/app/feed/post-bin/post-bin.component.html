@@ -122,13 +122,14 @@
                       <img src="http://placekitten.com/50/50" />
                     </div>
                     <div class="commentText" style="width:98%">
-                        <p class="">{{comment.comment}}</p> <span class="date sub-text">{{comment.created_on}}</span>
+                        <p class="">{{comment.comment}}</p>
 
                     </div>
                     <div class="commentText" style="display: table-cell; cursor:pointer" >
-                    <i class="fa fa-trash" style="font-size: 15px;color: #343a40;" title="Delete Comment" (click)="delete_comment(i,nth_c)" ></i>
+                    <i *ngIf="comment.owner;"  class="fa fa-trash" style="font-size: 15px;color: #343a40;" title="Delete Comment" (click)="delete_comment(i,nth_c)" ></i>
                   </div>
-                  <div style="display: flex;">
+                  <div style="display: flex;
+                  justify-content: space-between;">
                     <div style="display: flex;
                     width: 30%;">
                     <div *ngIf="comment.liked; else cmd_else_b">
@@ -150,6 +151,10 @@
                             </div>
             
                         </ng-template>
+                      </div>
+                      <div>
+                        <span class="date sub-text">{{comment.created_on}}</span>
+
                       </div>
                   </div>
                 </li>

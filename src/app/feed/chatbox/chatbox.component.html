@@ -1,13 +1,13 @@
 <div class="wrapper">
-    <div class="chat-box">
+    <div class="chat-box" style="    background: linear-gradient(to right, #fcfcff45, #7986cb3b);">
         <div class="chat-head">
             <img width="30" height="30" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
             <h4>Message</h4>
-            <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_bx()"></i> </div>
-        <div class="chat-body" [ngClass]="chat_box_tgl ? '' : 'chat_box_tgl_h'">
+            <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_list()"></i> </div>
+        <div class="chat-body" [ngClass]="chat_box_list_tgl ? '' : 'chat_box_tgl_h'">
             <div class="list">
-                <li class="clearfix" style="display:flex;padding: 2%;margin: 1%;
-                background-color: #e8e3dd;">
+                <li class="clearfix chat_line" style="display:flex;padding: 2%;margin: 1%;
+                    background-color: #b1b6df6b;" (click)="one_chatbox()">
                   <img width="30" height="30" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
                   <div class="about" style="margin-left: 6%;">
                     <div class="name">Vincent Porter</div>
@@ -17,8 +17,7 @@
                   </div>
                 </li>
                 
-                <li class="clearfix" style="display:flex;padding: 2%;margin: 1%;
-                background-color: #e8e3dd;">
+                <li class="clearfix chat_line" (click)="one_chatbox()" style="display:flex;padding: 2%;margin: 1%;    background-color: #b1b6df6b;">
                   <img width="30" height="30" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
                   <div class="about" style="margin-left: 6%;">
                     <div class="name">Aiden Chavez</div>
@@ -42,4 +41,29 @@
               </div>
         </div>
     </div>
+</div>
+<div class="wrapper" *ngIf="private_chat" >
+  <div class="chat-box" style=" right: 25%;   z-index: 5;">
+      <div class="chat-head">
+          <img width="30" height="30" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
+          <h4>UserName</h4>
+          <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_bx()"></i> </div>
+      <div class="chat-body" *ngIf="chat_box_tgl">
+          <div class="list">
+             
+              
+      
+          </div>
+          <div class="chat-text">
+           
+              <div style="margin: 2%; display: flex;height: 41px;">
+                 <textarea placeholder="....." class="form-control ng-pristine ng-valid ng-touched chat_txt" style="
+                 width: 100%;
+                 border-radius: 20px;"></textarea>
+             
+          </div>
+          
+            </div>
+      </div>
+  </div>
 </div>

@@ -1164,8 +1164,11 @@ p { padding-left: 10px; }
   overflow-x: hidden;
 }
 .swing {
-  perspective: 100px;
+  perspective: 100px;    
+  padding-left: 2%;
+
 }
+
 .swing li.comment_sec {
   opacity: 0;
   transform: rotateX(-90deg);
@@ -1178,6 +1181,7 @@ p { padding-left: 10px; }
 .swing li.show.comment_sec {
   padding:1%;
   opacity: 1;
+  background-color: #ffffff;
   transform: none;
   transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 }

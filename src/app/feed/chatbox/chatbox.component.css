@@ -34,6 +34,10 @@
 .name{
 	font-size: 0.8rem;
 }
+li.clearfix.chat_line:hover {
+	box-shadow: 1px 0 10px #7986cb36;
+	cursor:pointer;
+}
 .status{
 	font-size: 0.8rem;
 }
