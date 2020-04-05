@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div class="chat-box" style="    background: linear-gradient(to right, #fcfcff45, #7986cb3b);">
         <div class="chat-head">
-            <img width="30" height="30" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
+            <img width="25" height="25" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
             <h4>Message</h4>
             <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_list()"></i> </div>
         <div class="chat-body" [ngClass]="chat_box_list_tgl ? '' : 'chat_box_tgl_h'">
@@ -46,24 +46,75 @@
 <div class="wrapper" *ngIf="private_chat" >
   <div class="chat-box" style=" right: 20%;   z-index: 5;">
       <div class="chat-head">
-          <img width="30" height="30" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
-          <h4>UserName</h4>
-          <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_bx()"></i> </div>
+          <img width="25" height="25" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
+          <h4>Socket Chat</h4>
+          <i  class="fa fa-times chat-box_minus" (click)="one_chatbox()"  aria-hidden="true"></i>
+          <i *ngIf="maximize" class="fa fa-minus chat-box_minus animated bounce" (click)="toogle_ct_bx()"></i>
+          <i *ngIf="minimize" class="fa fa-window-maximize chat-box_minus  " (click)="toogle_ct_bx()"></i>
+         
+        </div>
       <div class="chat-body" *ngIf="chat_box_tgl">
           <div class="list">
-             
+            <div class="chat">
+
+              
+              <div class="chat-history">
+                <ul style="padding: 8px;">
+                  <li class="clearfix">
+                    <div class="message-data align-right">
+                      <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+                      <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+                      
+                    </div>
+                    <div class="message other-message float-right">
+                      Hi Vincent, how are you? How is the project coming along?
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <div class="message-data">
+                      <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+                      <span class="message-data-time">10:12 AM, Today</span>
+                    </div>
+                    <div class="message my-message">
+                      Are we meeting today? Project has been already finished and I have results to show you.
+                    </div>
+                  </li>
+                  <li style="display:none">
+                    <div class="message-data">
+                      <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+                      <span class="message-data-time">10:31 AM, Today</span>
+                    </div>
+                    <i class="fa fa-circle online"></i>
+                    <i class="fa fa-circle online" style="color: #AED2A6"></i>
+                    <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+                  </li>
+                  <div *ngFor="let message of messageList">
+                          <li>{{message}}</li>
+                  </div>
+                </ul>
+
+                
+              </div>
               
       
           </div>
           <div class="chat-text">
-           
-              <div style="margin: 2%; display: flex;height: 41px;">
-                 <textarea placeholder="....." class="form-control ng-pristine ng-valid ng-touched chat_txt" style="
+            <p>
+              {{ dyn_var }}
+            </p>
+              <div style="    margin: 2%;
+              padding-left: 6px;
+              display: flex;
+              height: 41px;
+              width: 100%;">
+                 <textarea [(ngModel)]="newMessage" placeholder="start chatting.." class="form-control ng-pristine ng-valid ng-touched chat_txt" style="
                  width: 100%;
                  border-radius: 20px;"></textarea>
-             
+             <div style="display: flex;"><button class="send_btn" (click)="sendMessage()"> <i class="fa fa-paper-plane" aria-hidden="true"></i> </button> </div>
           </div>
-          
+
+         
             </div>
       </div>
   </div>

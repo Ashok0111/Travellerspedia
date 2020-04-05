@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: ' http://localhost:5000/'};
+  apiUrl: 'http://localhost:5000/',
+  chatUrl: 'http://localhost:3000/chat',
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

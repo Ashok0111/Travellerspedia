@@ -39,4 +39,10 @@ export class RegisterModel {
       data: string ;
    
     }
-   
+    export class Message {
+      id: string;
+      body: string;
+  }export class Document {
+    id: string;
+    doc: string;
+  }

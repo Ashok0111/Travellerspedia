@@ -33,6 +33,12 @@ import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 import { DisplayProfileComponent } from './display-profile/display-profile.component';
 import { ChatboxComponent } from './feed/chatbox/chatbox.component';
 import { ViewPostComponent } from './feed/view-post/view-post.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+// Socket chatting 
+
+import { environment } from '../environments/environment';
+
+const config: SocketIoConfig = { url: environment.chatUrl, options: {} };
 registerPlugin(FilePondPluginFileValidateType,
  // FilePondPluginImagePreview,
   FilePondPluginImageEdit,
@@ -69,7 +75,8 @@ registerPlugin(FilePondPluginFileValidateType,
     HttpClientModule,
     ReactiveFormsModule,
     ImageCropperModule,
-    NgbModule
+    NgbModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [AuthService ,],
   bootstrap: [AppComponent]
