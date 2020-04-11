@@ -42,7 +42,14 @@ export class RegisterModel {
     export class Message {
       id: string;
       body: string;
-  }export class Document {
-    id: string;
-    doc: string;
+  }
+  export class MessageObject {
+    type:string;
+    message:string;
+  }
+  export class Room_number {
+    room_id:string;
+  }
+  export class Document {
+    jwt_token: string;
   }
