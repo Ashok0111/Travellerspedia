@@ -6,26 +6,18 @@
             <i class="fa fa-minus chat-box_minus animated bounce " (click)="toogle_ct_list()"></i> </div>
         <div class="chat-body cs_line" [ngClass]="chat_box_list_tgl ? '' : 'chat_box_tgl_h'">
             <div class="list">
-                <li class="clearfix chat_line" style="display:flex;padding: 2%;margin: 1%;
-                    background-color: #b1b6df6b;" (click)="one_chatbox()">
+                <li *ngFor="let user of chat_users;let user_ix= index"class="clearfix chat_line" style="display:flex;padding: 2%;margin: 1%;
+                    background-color: #b1b6df6b;" (click)="one_chatbox(user_ix)">
                   <img width="30" height="30" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
                   <div class="about" style="margin-left: 6%;">
-                    <div class="name">Vincent Porter</div>
+                    <div class="name">{{user.name}}</div>
                     <div class="status">
                       <i class="fa fa-circle online"></i> online
                     </div>
                   </div>
                 </li>
                 
-                <li class="clearfix chat_line" (click)="one_chatbox()" style="display:flex;padding: 2%;margin: 1%;    background-color: #b1b6df6b;">
-                  <img width="30" height="30" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
-                  <div class="about" style="margin-left: 6%;">
-                    <div class="name">Aiden Chavez</div>
-                    <div class="status">
-                      <i class="fa fa-circle offline"></i> left 7 mins ago
-                    </div>
-                  </div>
-                </li>
+
                 
         
             </div>
@@ -45,14 +37,26 @@
 </div>
 <div class="wrapper" *ngIf="private_chat" >
   <div class="chat-box" style=" right: 20%;   z-index: 5;">
+
       <div class="chat-head">
           <img width="25" height="25" style="padding: 2%;" src="/assets/img/message_chat.png"/>  
-          <h4>Socket Chat</h4>
-          <i  class="fa fa-times chat-box_minus" (click)="one_chatbox()"  aria-hidden="true"></i>
+          <h4>{{name_placeholder}}</h4>
+          <i  class="fa fa-times chat-box_minus" (click)="close_ctbx()"  aria-hidden="true"></i>
           <i *ngIf="maximize" class="fa fa-minus chat-box_minus animated bounce" (click)="toogle_ct_bx()"></i>
           <i *ngIf="minimize" class="fa fa-window-maximize chat-box_minus  " (click)="toogle_ct_bx()"></i>
          
         </div>
+        <div style="
+        justify-content: center;
+        display: flex;
+        width: 100%;
+    "><p style="
+        margin-bottom: 0px;
+        text-decoration: underline;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 10px;
+    ">Show More</p></div>
       <div class="chat-body cs_line" *ngIf="chat_box_tgl">
           <div class="list">
             <div class="chat">
@@ -81,16 +85,6 @@
                     </div>
                   </div>
                 </ng-template>
-                  </li>
-                
-                  <li style="display:none">
-                    <div class="message-data">
-                      <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-                      <span class="message-data-time">10:31 AM, Today</span>
-                    </div>
-                    <i class="fa fa-circle online"></i>
-                    <i class="fa fa-circle online" style="color: #AED2A6"></i>
-                    <i class="fa fa-circle online" style="color:#DAE9DA"></i>
                   </li>
                   
                 </ul>

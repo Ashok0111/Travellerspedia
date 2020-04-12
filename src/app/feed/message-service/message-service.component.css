@@ -10,6 +10,10 @@ body {
   padding: 40px 0;
   color: white;
 }
+.list
+{
+  height: 100%;
+}
 .chat-history ul li{
   list-style-type: none;
 }
@@ -22,21 +26,21 @@ body {
 
 .people-list {
   width: 280px;
-  float: left;
-  margin-left: 2%;
-  flex: 1;
   background: #343a400a;
-
+  border-right: 1px solid #ccc;
+  padding-right: 0px;
 }
 .people-list .search {
-  padding: 20px;
+  padding: 10px;
+  padding-top: 25px;
+  display: flex;
+    justify-content: center;
 }
 .people-list input {
   border-radius: 3px;
   border: none;
   padding: 14px;
-  color: white;
-  background: #c3c3c3;
+  background: #efefef;
   width: 90%;
   font-size: 14px;
 }
@@ -45,12 +49,10 @@ body {
   left: -25px;
 }
 .people-list ul {
-  padding: 20px;
+  padding: 5px;
   list-style-type: none;
 }
-.people-list ul li {
-  margin-bottom: 20px;
-}
+
 .people-list img {
   float: left;
 }
@@ -67,16 +69,24 @@ body {
 
 .chat {
   float: left;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
   color: #434651;
   flex: 2;
+  height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-right: 3px solid #7986cb;
+  border-radius: 0px;
+}
+.bg_design
+{
+  background-color: #ddffaa;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' fill-opacity='0.3' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
 }
 .chat .chat-header {
 
   background: #343a400a;
   padding: 20px;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid #ccc;
 }
 .chat .chat-header img {
   float: left;
@@ -101,9 +111,9 @@ body {
 }
 .chat .chat-history {
   padding: 30px 30px 20px;
-  border-bottom: 2px solid white;
   overflow-y: scroll;
   height: 300px;
+  direction: rtl;
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
@@ -150,17 +160,9 @@ body {
 .chat .chat-message {
   padding: 30px;
 
-  background: #343a400a;
+  background: #f7f7f8;
 }
-.chat .chat-message textarea {
-  width: 100%;
-  border: 1px solid #7986cb;
-  padding: 10px 20px;
-  font: 14px/22px "Lato", Arial, sans-serif;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  resize: none;
-}
+
 .chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {
   font-size: 16px;
   color: gray;
@@ -207,6 +209,85 @@ body {
   content: " ";
   clear: both;
   height: 0;
+  
+}
+.typewriter p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.message_font
+{
+  font-size: 20px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    height: 45px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+li.clearfix.clearfix_left:hover {
+  box-shadow: 1px 5px 15px #AAA;
+  border-left: 5px solid #7986cb;
+}
+.clearfix_selected {
+  box-shadow: 1px 5px 15px #AAA;
+  border-left: 5px solid #7986cb !important;
+}
+.clearfix_left{
+  background-color: #ffffff2e;
+  padding: 2px;
+  border-left: 5px solid #ffffff2e;
+    margin: 1%;
+}
+textarea {
+  margin-top: 10px;
+  width: 100%;
+
+  height: 100px;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);
+  border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;
+  border-image: none;
+  border-radius: 6px 6px 6px 6px;
+  border-style: none solid solid none;
+  border-width: medium 1px 1px medium;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
+  color: #555555;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  padding: 5px 8px;
+  transition: background-color 0.2s ease 0s;
+}
+
+
+textarea:focus {
+    background: none repeat scroll 0 0 #FFFFFF;
+    outline-width: 0;
 }
 .global_btn
 {
@@ -223,4 +304,84 @@ body {
   font-size: 13px;
   border-left: 5px solid #7885cb;
   background-color: #343a40;
+}
+
+.cs_line::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+}
+
+.cs_line::-webkit-scrollbar
+{
+	width: 5px;
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+  
+}
+
+.cs_line::-webkit-scrollbar-thumb
+{
+	background-color: #343a40;
+  border: 1px solid #555555;
+  overflow-x: hidden;
+}
+.speech-bubble_left {
+	position: relative;
+	background: #62d085;
+  border-radius: .4em;
+  min-height: 4rem;
+  min-width: 15%;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+}
+.bubble_text
+{
+  color: white;
+  font-weight: 800;
+  margin-top: 1%;
+  text-align: center;
+  margin: 2%;
+    word-break: break-word;
+}
+.speech-bubble_left:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.964em solid transparent;
+	border-right-color: #62d085;
+	border-left: 0;
+	margin-top: -0.964em;
+	margin-left: -0.964em;
+}
+.speech-bubble_right {
+	position: relative;
+	background: #00aabb;
+  border-radius: .4em;
+  min-height: 4rem;
+  min-width: 15%;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+}
+
+.speech-bubble_right:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.964em solid transparent;
+	border-left-color: #00aabb;
+	border-right: 0;
+	margin-top: -0.964em;
+	margin-right: -0.964em;
 }

@@ -83,7 +83,15 @@ import { Search_all } from '../service_models/auth.model';
       };
       return this.http.get(this.baseURL+"post/all/",httpOptions).toPromise();
     }
-    
+    get_chatlist()
+    {
+      let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+      headers = headers.append('Authorization', 'Bearer '+localStorage.getItem('a-t'));
+      const httpOptions= {
+        headers: headers
+      };
+      return this.http.get(this.baseURL+"users",httpOptions).toPromise();
+    }   
     like_post(post_op:Post_like)
     {
       let headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});

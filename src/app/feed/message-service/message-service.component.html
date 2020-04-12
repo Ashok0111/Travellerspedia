@@ -1,35 +1,14 @@
-  <div style="justify-content: center;background: #e0e0e3;    margin-left: 250px;">
-  <div style="height: 100%;    display: flex;">
-    <div class="people-list" id="people-list">
+  <div style="padding-left: 20%; position: fixed;     width: 100%;   height: 100%;">
+  <div class="row" style="width: 100%;box-shadow: 1px 0 10px #AAA;margin-top:1%">
+    <div class="people-list col-md-4" id="people-list">
       <div class="search">
         <input type="text" placeholder="search" />
-        <i class="fa fa-search"></i>
       </div>
-      <ul class="list">
-        <li class="clearfix">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+      <ul class="list" style="cursor: pointer;height: 85%;">
+        <li *ngFor="let user of chat_users; let user_ix= index" class="clearfix clearfix_left" [ngClass]="clearfix_selected[user_ix] ? 'clearfix_selected' : ''" (click)="one_chatbox(user_ix)">
+          <img width="55" height="55" src="/assets/img/user.png"  alt="avatar" />
           <div class="about">
-            <div class="name">Vincent Porter</div>
-            <div class="status">
-              <i class="fa fa-circle online"></i> online
-            </div>
-          </div>
-        </li>
-        
-        <li class="clearfix">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
-          <div class="about">
-            <div class="name">Aiden Chavez</div>
-            <div class="status">
-              <i class="fa fa-circle offline"></i> left 7 mins ago
-            </div>
-          </div>
-        </li>
-        
-        <li class="clearfix">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
-          <div class="about">
-            <div class="name">Mike Thomas</div>
+            <div class="name">{{user.name}}</div>
             <div class="status">
               <i class="fa fa-circle online"></i> online
             </div>
@@ -40,109 +19,84 @@
       </ul>
     </div>
     
-    <div class="chat" style="    width: 55%;    height: 100%;">
+    <div *ngIf="private_chat else chatbox" class="chat col-md-8" style="height: 600px;padding-left: 0px;">
+      
+      
       <div class="chat-header clearfix">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar" />
-        
         <div class="chat-about">
-          <div class="chat-with">Vincent Porter</div>
-          <div class="chat-num-messages">1,902 messages</div>
+      <p class="message_font">messages</p>
+        </div>
+      </div> <!-- end chat-header -->
+    
+      <div style="display:flex;align-items: center;
+      height: 100%;
+      justify-content: center;background-color: #efefef;" class="bg_design">
+    <svg xmlns="http://www.w3.org/2000/svg" height="300px" viewBox="0 0 512 512" width="300px" class=""><g transform="matrix(0.61692 0 0 0.61692 98.0684 98.0684)"><path d="m512 256c0 25.222656-3.648438 49.589844-10.449219 72.609375-6.570312 22.289063-16.101562 43.3125-28.140625 62.609375-45.191406 72.515625-125.667968 120.78125-217.410156 120.78125-141.386719 0-256-114.613281-256-256 0-5.058594.144531-10.074219.4375-15.058594 4.828125-83.234375 49.414062-155.792968 115.054688-198.976562 40.332031-26.53125 88.617187-41.964844 140.507812-41.964844 141.386719 0 256 114.613281 256 256zm0 0" fill="#854f89" data-original="#854F89" class="" style="fill:#5B73F1" data-old_color="#854f89"/><path d="m207.058594 192.242188v198.976562h68.316406l96.378906 55.074219-23.191406-55.074219h95.070312c12.039063-19.296875 21.566407-40.320312 28.140626-62.609375v-136.367187zm0 0" fill="#713775" data-original="#713775" class="" style="fill:#404E98" data-old_color="#713775"/><path d="m259.488281 41.964844v198.976562h-68.3125l-96.382812 55.078125 23.1875-55.078125h-117.542969c4.828125-83.234375 49.414062-155.792968 115.054688-198.976562zm0 0" fill="#713775" data-original="#713775" class="" style="fill:#404E98" data-old_color="#713775"/><path d="m16.78125 41.964844h264.714844v198.976562h-264.714844zm0 0" fill="#f74f4f" data-original="#F74F4F" class="active-path" style="fill:#6AA5EF" data-old_color="#f74f4f"/><path d="m145.222656 228.503906-28.425781 67.511719 124.363281-71.0625zm0 0" fill="#f74f4f" data-original="#F74F4F" class="active-path" style="fill:#6AA5EF" data-old_color="#f74f4f"/><g fill="#3d4159"><path d="m124.859375 141.449219c0 8.109375-6.570313 14.683593-14.679687 14.683593-8.105469 0-14.679688-6.574218-14.679688-14.683593 0-8.105469 6.574219-14.679688 14.679688-14.679688 8.109374 0 14.679687 6.574219 14.679687 14.679688zm0 0" data-original="#3D4159" class=""/><path d="m163.820312 141.449219c0 8.109375-6.570312 14.683593-14.679687 14.683593s-14.679687-6.574218-14.679687-14.683593c0-8.105469 6.570312-14.679688 14.679687-14.679688s14.679687 6.574219 14.679687 14.679688zm0 0" data-original="#3D4159" class=""/><path d="m202.78125 141.449219c0 8.109375-6.574219 14.683593-14.679688 14.683593-8.109374 0-14.683593-6.574218-14.683593-14.683593 0-8.105469 6.574219-14.679688 14.683593-14.679688 8.105469 0 14.679688 6.574219 14.679688 14.679688zm0 0" data-original="#3D4159" class=""/></g><path d="m221.257812 192.242188h60.238282v48.699218h-60.238282zm0 0" fill="#dd3033" data-original="#DD3033" class="" style="fill:#4051A6" data-old_color="#dd3033"/><path d="m501.550781 192.242188v136.367187c-6.570312 22.289063-16.101562 43.3125-28.140625 62.609375h-236.574218v-198.976562zm0 0" fill="#ffe152" data-original="#FFE152" class="" style="fill:#81DD93" data-old_color="#ffe152"/><path d="m373.105469 378.78125 28.425781 67.511719-124.363281-71.0625zm0 0" fill="#ffe152" data-original="#FFE152" class="" style="fill:#81DD93" data-old_color="#ffe152"/><path d="m422.832031 291.726562c0 8.109376-6.574219 14.683594-14.683593 14.683594-8.105469 0-14.679688-6.574218-14.679688-14.683594 0-8.105468 6.574219-14.679687 14.679688-14.679687 8.109374 0 14.683593 6.574219 14.683593 14.679687zm0 0" fill="#3d4159" data-original="#3D4159" class=""/><path d="m383.871094 291.726562c0 8.109376-6.574219 14.683594-14.679688 14.683594-8.109375 0-14.683594-6.574218-14.683594-14.683594 0-8.105468 6.574219-14.679687 14.683594-14.679687 8.105469 0 14.679688 6.574219 14.679688 14.679687zm0 0" fill="#3d4159" data-original="#3D4159" class=""/><path d="m344.910156 291.726562c0 8.109376-6.574218 14.683594-14.683594 14.683594-8.105468 0-14.679687-6.574218-14.679687-14.683594 0-8.105468 6.574219-14.679687 14.679687-14.679687 8.109376 0 14.683594 6.574219 14.683594 14.679687zm0 0" fill="#3d4159" data-original="#3D4159" class=""/></g> </svg>   
+
+  
+  </div>
+   
+    </div> <!-- end chat -->
+    <ng-template #chatbox>
+    <div class="chat col-md-8" style="height: 600px;padding-left: 0px;">
+      
+      <div class="chat-header clearfix">
+        <img width="55" height="55" src="/assets/img/user.png"  alt="avatar" />
+        <div class="chat-about">
+          <div class="chat-with">{{name_placeholder}}</div>
+          <div class="chat-num-messages">5 messages</div>
         </div>
         <i class="fa fa-star"></i>
       </div> <!-- end chat-header -->
-      
-      <div class="chat-history">
+      <div style="
+      justify-content: center;
+      display: flex;
+      width: 100%;
+  "><p style="
+      margin-bottom: 0px;
+      text-decoration: underline;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 10px;
+  ">Show More</p></div>
+      <div class="chat-history cs_line" #scrollMe>
         <ul>
-          <li class="clearfix">
-            <div class="message-data align-right">
-              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
-              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+          <div *ngFor="let item of messageList;" >
+            <div *ngIf="item.type=='sender' else receiver" style="display:flex"> 
               
+              <div class="speech-bubble_right">
+               <p class="bubble_text"> {{item.message}}</p>
             </div>
-            <div class="message other-message float-right">
-              Hi Vincent, how are you? How is the project coming along?
-            </div>
-          </li>
-          
-          <li>
-            <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-              <span class="message-data-time">10:12 AM, Today</span>
-            </div>
-            <div class="message my-message">
-              Are we meeting today? Project has been already finished and I have results to show you.
-            </div>
-          </li>
-          
-          <li class="clearfix">
-            <div class="message-data align-right">
-              <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
-              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
               
-            </div>
-            <div class="message other-message float-right">
-              Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?
-            </div>
-          </li>
-          
-          <li>
-            <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-              <span class="message-data-time">10:20 AM, Today</span>
-            </div>
-            <div class="message my-message">
-              Actually everything was fine. I'm very excited to show this to our team.
-            </div>
-          </li>
-          
-          <li>
-            <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-              <span class="message-data-time">10:31 AM, Today</span>
-            </div>
-            <i class="fa fa-circle online"></i>
-            <i class="fa fa-circle online" style="color: #AED2A6"></i>
-            <i class="fa fa-circle online" style="color:#DAE9DA"></i>
-          </li>
+          </div>
+          <ng-template #receiver>
+            <div style="display: flex;
+            flex-direction: row-reverse;">
+          <div class="speech-bubble_left">
+              <p class="bubble_text">{{item.message}}</p>
+          </div>
+        </div>
+        </ng-template>
+      </div>
           
         </ul>
-        
+        <div style="    display: flex;
+        justify-content: flex-start;">
+        <div  *ngIf="is_typing" class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
       </div> <!-- end chat-history -->
       
       <div class="chat-message clearfix">
-        <textarea name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
-                
-        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
-        <i class="fa fa-file-image-o"></i>
-        
-        <button class="btn btn-primary global_btn pull-right">Send</button>
-
+        <textarea (keyup)="onKeyPress($event)" [(ngModel)]="message_area" name="message-to-send" (keyup.enter)="sendMessage()"  placeholder ="Type your message" rows="3"></textarea>
       </div> <!-- end chat-message -->
       
     </div> <!-- end chat -->
+  </ng-template>
+
   </div> <!-- end container -->
  </div> 
- 
-<script id="message-template" type="text/x-handlebars-template">
-  <li class="clearfix">
-    <div class="message-data align-right">
-      <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
-      <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
-    </div>
-    <div class="message other-message float-right">
-      {{messageOutput}}
-    </div>
-  </li>
-</script>
 
-<script id="message-response-template" type="text/x-handlebars-template">
-  <li>
-    <div class="message-data">
-      <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-      <span class="message-data-time">{{time}}, Today</span>
-    </div>
-    <div class="message my-message">
-      {{response}}
-    </div>
-  </li>
-</script>
